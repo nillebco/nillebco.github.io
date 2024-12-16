@@ -19,6 +19,10 @@ h2,.white{
     color: #fff;
 }
 
+h3,.white{
+    color: #fff;
+}
+
 a{
     color: #7A7C80;
     text-decoration: none;
@@ -45,7 +49,13 @@ a{
     padding: 10px;
 }
 /* section 2 */
-.section-2{
+.section-2 {
+    line-height: 1.4;
+    font-size: 14px;
+    padding: 0 10px;
+    margin: 50px auto;
+    max-width: 650px;
+    max-width:42em;margin:15 auto;
     padding-top: 10vh;
     width: 70%;
 }
@@ -55,8 +65,13 @@ a{
     margin-bottom: 10px;
 }
 
+.section-2 h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
 .section-2 p{
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding-bottom: 10px;
     margin:0;
 }
