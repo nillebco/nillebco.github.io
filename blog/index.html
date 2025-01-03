@@ -86,6 +86,7 @@
           event.preventDefault();
           const slug = event.target.getAttribute('data-slug');
           openPost(slug);
+          window.nillebAnalytics.trackEvent(`blog-post-${slug}`, { slug });
           window.location.hash = slug;
         });
       });
