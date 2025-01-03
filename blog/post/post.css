@@ -1,0 +1,13 @@
+.content {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    padding-top: 60px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}

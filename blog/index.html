@@ -8,18 +8,23 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css"
     integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous">
   <link rel="stylesheet" href="../style.css">
-  <title>Ivo Bellin Salarin</title>
+  <link rel="stylesheet" href="./layout.css">
+  <link rel="stylesheet" href="./blog.css">
+  <script src="../behavior.js"></script>
+  <title>nilleb's blog</title>
 </head>
 
 <body class="dark-mode">
+  <nav style="padding: 10px;">
+    <a href="/" style="text-decoration: underline; color: inherit;">nillebco</a> &gt;
+    <span>blog</span>
+  </nav>
   <div class="theme-button" style="position: fixed; top: 10px; right: 44px;">
     <button id="theme-button"><i id="theme-icon" class="fas fa-sun"></i></button>
   </div>
   <div class="toast-button" style="position: fixed; top: 10px; right: 10px;">
     <button><i class="fas fa-bars"></i></button>
-    <div id="toast-menu"
-      class="hidden"
-      style="position: absolute; right: 0; background: white; border: 1px solid #ccc; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <div id="toast-menu" class="toast-menu hidden">
       <a href="/portfolio" style="display: block; padding: 10px;">Portfolio</a>
       <a href="/" style="display: block; padding: 10px;">Main Site</a>
       <a href="https://gravatar.com/nilleb" style="display: block; padding: 10px;">Contact</a>
@@ -27,41 +32,89 @@
   </div>
   <div class="grid-2">
     <div class="section-2">
+      <div class="page-icon"><span role="img" aria-label="🔬" class="page-icon">🔬</span>
+      </div>
       <h2>blog</h2>
-      <p>Work in progress... (migrating data)</p>
+      <ul id="blog-list" class="blog-list"></ul>
     </div>
-    <div class="section-1">
-      <h3>Live stream</h3>
+  </div>
+  <div id="overlay" class="overlay">
+    <div class="overlay-content">
+      <span class="overlay-close">&times;</span>
+      <div id="overlay-post-content"></div>
     </div>
   </div>
   <script>
-    function toastToggleSetup() {
-      var toastButton = document.querySelector('.toast-button button');
-      var toastMenu = document.getElementById('toast-menu');
-      toastButton.addEventListener('click', () => {
-        toastMenu.classList.toggle('hidden');
-      });
+    const tagColors = {};
+
+    function getRandomColor() {
+      const hue = Math.floor(Math.random() * 360);
+      return `hsl(${hue}, 70%, 80%)`;
     }
-    function themeToggleSetup() {
-      const toggleButton = document.getElementById('theme-button');
-      toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        themeIcon = document.getElementById('theme-icon');
-        if (document.body.classList.contains('dark-mode')) {
-          themeIcon.classList.remove('fa-moon');
-          themeIcon.classList.add('fa-sun');
-        } else {
-          themeIcon.classList.remove('fa-sun');
-          themeIcon.classList.add('fa-moon');
-        }
-      });
+
+    async function fetchPostContent(slug) {
+      const response = await fetch(`post/#${slug}`);
+      return await response.text();
     }
-    toastToggleSetup();
-    themeToggleSetup();
+
+    function openPost(slug) {
+      const postUrl = `post/#${slug}`;
+      document.getElementById('overlay-post-content').innerHTML = `<iframe src="${postUrl}" style="width: 100%; height: 100%; border: none;"></iframe>`;
+      document.getElementById('overlay').style.display = 'flex';
+    }
+
+    (async function () {
+      const response = await fetch('posts.json');
+      const posts = await response.json();
+
+      const blogList = document.getElementById('blog-list');
+      blogList.innerHTML = posts.map(post => `
+        <li class="blog-item">
+          <span>${post.emoji}</span><strong><a href="#${post.slug}" class="post-link" data-slug="${post.slug}">${post.title}</a></strong>
+          <div>${post.date}</div>
+          <div class="tags">
+            ${post.tags.map(tag => {
+        if (!tagColors[tag]) tagColors[tag] = getRandomColor();
+        return `<span class="tag" style="background-color: ${tagColors[tag]};">${tag}</span>`;
+      }).join(' ')}
+          </div>
+        </li>
+      `).join('');
+
+      document.querySelectorAll('.post-link').forEach(link => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const slug = event.target.getAttribute('data-slug');
+          openPost(slug);
+          window.location.hash = slug;
+        });
+      });
+
+      if (window.location.hash) {
+        const slug = window.location.hash.substring(1);
+        openPost(slug);
+      }
+    })();
+
+    document.querySelector('.overlay-close').addEventListener('click', () => {
+      document.getElementById('overlay').style.display = 'none';
+      window.location.hash = '';
+    });
+
+    document.getElementById('overlay').addEventListener('click', (event) => {
+      if (event.target.id === 'overlay') {
+        document.getElementById('overlay').style.display = 'none';
+        window.location.hash = '';
+      }
+    });
+
+    setupToastMenu();
+    setupThemeToggle();
+    setupCopyrightNotice();
   </script>
   <script src="https://analytics.nilleb.com/simple.js?pid=43c65438-0a04-e5ae-c360-de67f02f62a1"></script>
 </body>
-<footer style="position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 10px">
+<footer style="position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 10px" id="copyright-notice">
   &copy; 2022-2025 Ivo Bellin Salarin
 </footer>
 

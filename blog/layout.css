@@ -1,0 +1,48 @@
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.section-2 {
+    line-height: 1.4;
+    font-size: 14px;
+    padding: 0 10px;
+    margin: 50px auto;
+    max-width: 800px;
+    max-width: 60em;
+    margin: 15 auto;
+    padding-top: 10vh;
+    padding-left: 20em;
+    width: 100%;
+}
+
+.section-2 h2 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.section-2 h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.section-2 p {
+    font-size: 1rem;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+.section-2 a {
+    display: block;
+    padding: 5px;
+    font-size: 1.2rem;
+    padding-left: 0;
+    width: 150px;
+}
+
+.section-2 a:hover {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: 0.2s;
+}

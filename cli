@@ -1,0 +1,14 @@
+#!/bin/bash
+
+serve() {
+    python -m http.server 8082
+}
+
+case "$1" in
+    serve)
+        serve
+        ;;
+    *)
+        echo "Error: Invalid command. Available commands: serve"
+        ;;
+esac
