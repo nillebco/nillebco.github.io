@@ -11,7 +11,7 @@ push() {
     git push origin www.nilleb.co
     git checkout www.nilleb.com
     git merge main
-    git push origin www.nilleb.com
+    git push web www.nilleb.com
 }
 
 case "$1" in
