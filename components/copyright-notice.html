@@ -1,0 +1,13 @@
+<footer style="position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 10px" id="copyright-notice">
+  &copy; 2022-<span id="current-year"></span> Ivo Bellin Salarin
+</footer>
+
+<script>
+  document.addEventListener('htmx:afterSettle', function(evt) {
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan && !yearSpan.hasContent) {
+      yearSpan.hasContent = true;
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+</script> 

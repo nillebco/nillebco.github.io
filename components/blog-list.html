@@ -1,0 +1,74 @@
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<script>
+  document.addEventListener('htmx:afterSettle', async function(evt) {
+    const blogList = document.getElementById('blog-list');
+    if (blogList && !blogList.hasContent) {
+      blogList.hasContent = true;
+      
+      const response = await fetch('posts.json');
+      const posts = await response.json();
+
+      blogList.innerHTML = posts.map(post => `
+        <li class="blog-item">
+          <span>${post.emoji}</span><strong><a href="#${post.slug}" class="post-link" data-slug="${post.slug}">${post.title}</a></strong>
+          <div>${post.date}</div>
+          <div class="tags">
+            ${post.tags.map(tag => {
+              if (!tagColors[tag]) tagColors[tag] = getRandomColor();
+              return `<span class="tag" style="background-color: ${tagColors[tag]};">${tag}</span>`;
+            }).join(' ')}
+          </div>
+        </li>
+      `).join('');
+
+      document.querySelectorAll('.post-link').forEach(link => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const slug = event.target.getAttribute('data-slug');
+          openPost(slug);
+          window.nillebAnalytics.trackEvent(`blog-post-${slug}`, { slug });
+          window.location.hash = slug;
+        });
+      });
+
+      if (window.location.hash) {
+        const slug = window.location.hash.substring(1);
+        openPost(slug);
+      }
+
+      const overlay = document.getElementById('overlay');
+      const overlayClose = document.querySelector('.overlay-close');
+      
+      overlayClose.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        window.location.hash = '';
+      });
+
+      overlay.addEventListener('click', (event) => {
+        if (event.target.id === 'overlay') {
+          overlay.style.display = 'none';
+          window.location.hash = '';
+        }
+      });
+    }
+  });
+
+  const tagColors = {};
+
+  function getRandomColor() {
+    const hue = Math.floor(Math.random() * 360);
+    return `hsl(${hue}, 70%, 80%)`;
+  }
+
+  async function fetchPostContent(slug) {
+    const response = await fetch(`post/#${slug}`);
+    return await response.text();
+  }
+
+  function openPost(slug) {
+    const postUrl = `post/#${slug}`;
+    document.getElementById('overlay-post-content').innerHTML = 
+      `<iframe src="${postUrl}" style="width: 100%; height: 100%; border: none;"></iframe>`;
+    document.getElementById('overlay').style.display = 'flex';
+  }
+</script> 

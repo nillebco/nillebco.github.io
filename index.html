@@ -9,23 +9,15 @@
     integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="two-columns.css">
-  <script src="behavior.js"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
   <title>Ivo Bellin Salarin</title>
 </head>
 
 <body class="dark-mode">
-  <div class="theme-button" style="position: fixed; top: 10px; right: 44px;">
-    <button id="theme-button"><i id="theme-icon" class="fas fa-sun"></i></button>
-  </div>
-  <div class="toast-button" style="position: fixed; top: 10px; right: 10px;">
-    <button><i class="fas fa-bars"></i></button>
-    <div id="toast-menu" class="hidden"
-      style="position: absolute; right: 0; background: white; border: 1px solid #ccc; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-      <a href="/portfolio" style="display: block; padding: 10px;">Portfolio</a>
-      <a href="/blog" style="display: block; padding: 10px;">Blog</a>
-      <a href="https://gravatar.com/nilleb" style="display: block; padding: 10px;">Contact</a>
-    </div>
-  </div>
+  <!-- Load components with HTMX -->
+  <div hx-get="/components/theme-toggle.html" hx-trigger="load"></div>
+  <div hx-get="/components/toast-menu.html" hx-trigger="load"></div>
+
   <div class="grid-2">
     <div class="section-2">
       <h3>Consulting in Artificial Intelligence, Machine Learning, Search Engines, Integrations</h3>
@@ -54,17 +46,9 @@
       <a href="https://github.com/nilleb"><i class="fab fa-github"></i></a>
     </div>
   </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      setupToastMenu();
-      setupThemeToggle();
-      setupCopyrightNotice();
-    });
-  </script>
+
+  <div hx-get="/components/copyright-notice.html" hx-trigger="load"></div>
   <script src="https://analytics.nilleb.com/simple.js?pid=43c65438-0a04-e5ae-c360-de67f02f62a1"></script>
 </body>
-<footer style="position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 10px" id="copyright-notice">
-  &copy; 2022-2025 Ivo Bellin Salarin
-</footer>
 
 </html>
