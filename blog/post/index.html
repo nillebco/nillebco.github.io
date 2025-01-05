@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="../../style.css">
   <script src="../../behavior.js"></script>
   <script src="logic.js"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <title>Blog Post</title>
 </head>
 
@@ -26,38 +28,23 @@
     <a href="/blog" style="text-decoration: underline; color: inherit;">blog</a> &gt;
     <span id="breadcrumb-title"></span>
   </nav>
-  <div class="theme-button" style="position: fixed; top: 10px; right: 44px;">
-    <button id="theme-button"><i id="theme-icon" class="fas fa-sun"></i></button>
-  </div>
-  <div class="toast-button" style="position: fixed; top: 10px; right: 10px;">
-    <button><i class="fas fa-bars"></i></button>
-    <div id="toast-menu" class="toast-menu hidden">
-      <a href="/portfolio" style="display: block; padding: 10px;">Portfolio</a>
-      <a href="/" style="display: block; padding: 10px;">Main Site</a>
-      <a href="https://gravatar.com/nilleb" style="display: block; padding: 10px;">Contact</a>
-    </div>
-  </div>
+
+  <div hx-get="/components/theme-toggle.html" hx-trigger="load"></div>
+  <div hx-get="/components/toast-menu.html" hx-trigger="load"></div>
+
   <div class="content">
     <div class="page-icon"><span role="img" aria-label="🔬" id="page-icon" class="page-icon">🔬</span></div>
     <h1 class="white" id="post-title"></h1>
     <div id="post-tags" class="tags"></div>
     <div id="post-content"></div>
   </div>
+
+  <div hx-get="/components/copyright-notice.html" hx-trigger="load"></div>
+  <script src="https://analytics.nilleb.com/simple.js?pid=43c65438-0a04-e5ae-c360-de67f02f62a1"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      setupToastMenu();
-      setupThemeToggle();
-      setupCopyrightNotice();
-    });
-
-    function onMarkedLoaded() {
       loadPost();
-    }
+    });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" onload="onMarkedLoaded()"></script>
-  <script src="https://analytics.nilleb.com/simple.js?pid=43c65438-0a04-e5ae-c360-de67f02f62a1"></script>
 </body>
-<footer style="position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 10px" id="copyright-notice">
-  &copy; 2022-2025 Ivo Bellin Salarin
-</footer>
 </html>

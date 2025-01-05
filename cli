@@ -4,9 +4,22 @@ serve() {
     python -m http.server 8082
 }
 
+push() {
+    git push origin main
+    git checkout www.nilleb.co
+    git merge main
+    git push origin www.nilleb.co
+    git checkout www.nilleb.com
+    git merge main
+    git push origin www.nilleb.com
+}
+
 case "$1" in
     serve)
         serve
+        ;;
+    push)
+        push
         ;;
     *)
         echo "Error: Invalid command. Available commands: serve"
