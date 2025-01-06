@@ -5,6 +5,8 @@ serve() {
 }
 
 push() {
+    git fetch origin
+    git fetch web
     git push origin main
     git checkout www.nilleb.co
     git merge main
@@ -12,6 +14,7 @@ push() {
     git checkout www.nilleb.com
     git merge main
     git push web www.nilleb.com
+    git checkout main
 }
 
 setup() {
