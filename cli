@@ -14,6 +14,12 @@ push() {
     git push web www.nilleb.com
 }
 
+setup() {
+    uv venv
+    source .venv/bin/activate
+    uv pip install feedgen pytz
+}
+
 case "$1" in
     serve)
         serve
@@ -21,7 +27,14 @@ case "$1" in
     push)
         push
         ;;
+    rss)
+        . .venv/bin/activate
+        python3 generate_rss.py
+        ;;
+    setup)
+        setup
+        ;;
     *)
-        echo "Error: Invalid command. Available commands: serve"
+        echo "Error: Invalid command. Available commands: serve, push, rss, setup"
         ;;
 esac
