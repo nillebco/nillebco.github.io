@@ -5,13 +5,18 @@ serve() {
 }
 
 push() {
+    git fetch origin
+    git fetch web
     git push origin main
     git checkout www.nilleb.co
+    git pull origin www.nilleb.co
     git merge main
     git push origin www.nilleb.co
     git checkout www.nilleb.com
+    git pull web www.nilleb.com
     git merge main
     git push web www.nilleb.com
+    git checkout main
 }
 
 setup() {
