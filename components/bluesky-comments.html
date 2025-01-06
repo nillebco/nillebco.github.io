@@ -1,0 +1,166 @@
+<div id="comments-section">
+    <div class="comments-header">
+        <span id="like-count">0</span> likes
+        <span id="repost-count">0</span> reposts
+        <span id="reply-count">0</span> replies
+    </div>
+
+    <h2>Comments</h2>
+    <p>
+        <a id="bluesky-link" href="" target="_blank">
+            Reply on Bluesky <i class="fas fa-external-link-alt"></i>
+        </a>
+        to join the conversation.
+    </p>
+
+    <div id="comments-list"></div>
+    <button id="show-more" class="hidden" hx-get="" hx-target="#comments-list" hx-swap="beforeend">
+        Show more comments
+    </button>
+</div>
+
+<template id="comment-template">
+    <div class="comment">
+        <div class="comment-header">
+            <img class="avatar" src="" alt="avatar">
+            <span class="display-name"></span>
+            <span class="handle"></span>
+        </div>
+        <div class="comment-text"></div>
+        <div class="comment-actions">
+            <span class="reply-count"></span>
+            <span class="repost-count"></span>
+            <span class="like-count"></span>
+        </div>
+        <div class="comment-replies"></div>
+    </div>
+</template>
+
+<style>
+    .comment {
+        margin: 1em 0;
+        padding: 1em;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .comment-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .avatar {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+    }
+
+    .handle {
+        opacity: 0.7;
+    }
+
+    .comment-actions {
+        margin-top: 0.5em;
+        opacity: 0.7;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+<script>
+    document.addEventListener('htmx:afterSettle', async function (event) {
+        console.log({ event });
+        const bskyUri = event.target.getAttribute('data-bsky-uri');
+        if (!bskyUri) {
+            console.error('No Bluesky URI provided');
+            return;
+        }
+        console.log('Attempting to fetch Bluesky thread:', bskyUri);
+
+        async function fetchThreadData(uri) {
+            const params = new URLSearchParams({ uri });
+            const url = "https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?" + params.toString();
+            console.log('Fetching from:', url);
+            const res = await fetch(
+                url,
+                {
+                    method: 'GET',
+                    headers: { "Accept": "application/json" },
+                    cache: "no-store",
+                }
+            );
+
+            if (!res.ok) {
+                console.error('Bluesky API error:', await res.text());
+                throw new Error("Failed to fetch post thread");
+            }
+            return await res.json();
+        }
+
+        function renderComment(comment) {
+            const template = document.getElementById('comment-template');
+            const clone = template.content.cloneNode(true);
+
+            const avatar = clone.querySelector('.avatar');
+            avatar.src = comment.post.author.avatar || 'default-avatar.png';
+
+            clone.querySelector('.display-name').textContent = comment.post.author.displayName || comment.post.author.handle;
+            clone.querySelector('.handle').textContent = '@' + comment.post.author.handle;
+            clone.querySelector('.comment-text').textContent = comment.post.record.text;
+
+            const actions = clone.querySelector('.comment-actions');
+            actions.querySelector('.reply-count').textContent = `${comment.post.replyCount || 0} replies`;
+            actions.querySelector('.repost-count').textContent = `${comment.post.repostCount || 0} reposts`;
+            actions.querySelector('.like-count').textContent = `${comment.post.likeCount || 0} likes`;
+
+            return clone;
+        }
+
+        try {
+            const thread = (await fetchThreadData(bskyUri)).thread;
+            console.log('Received thread data:', thread);
+
+            // Update header counts
+            document.getElementById('like-count').textContent = thread.post.likeCount || 0;
+            document.getElementById('repost-count').textContent = thread.post.repostCount || 0;
+            document.getElementById('reply-count').textContent = thread.post.replyCount || 0;
+
+            // Set Bluesky link
+            const [, , did, , rkey] = bskyUri.split('/');
+            const bskyLink = `https://bsky.app/profile/${did}/post/${rkey}`;
+            document.getElementById('bluesky-link').href = bskyLink;
+
+            // Render comments
+            const commentsList = document.getElementById('comments-list');
+            const sortedReplies = thread.replies.sort((a, b) => (b.post.likeCount || 0) - (a.post.likeCount || 0));
+
+            sortedReplies.slice(0, 3).forEach(reply => {
+                commentsList.appendChild(renderComment(reply));
+            });
+
+            // Show "Show more" button if there are more comments
+            if (sortedReplies.length > 3) {
+                const showMoreBtn = document.getElementById('show-more');
+                showMoreBtn.classList.remove('hidden');
+                let visibleCount = 3;
+
+                showMoreBtn.addEventListener('click', () => {
+                    sortedReplies.slice(visibleCount, visibleCount + 5).forEach(reply => {
+                        commentsList.appendChild(renderComment(reply));
+                    });
+                    visibleCount += 5;
+                    if (visibleCount >= sortedReplies.length) {
+                        showMoreBtn.classList.add('hidden');
+                    }
+                });
+            }
+        } catch (error) {
+            console.error('Error fetching thread:', error);
+            document.getElementById('comments-section').innerHTML = '<p>Error loading comments</p>';
+        }
+    });
+</script>

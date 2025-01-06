@@ -40,6 +40,15 @@ async function loadPost() {
     const pageIcon = document.getElementById('page-icon');
     pageIcon.innerText = post.emoji;
     pageIcon.setAttribute('aria-label', post.emoji);
+    if (post.bskyId) {
+      const commentsDiv = document.getElementById('bluesky-comments');
+      commentsDiv.setAttribute('data-bsky-uri', `at://${window.BLUESKY_DID}/app.bsky.feed.post/${post.bskyId}`);
+      commentsDiv.setAttribute('hx-get', '../../components/bluesky-comments.html');
+      commentsDiv.setAttribute('hx-trigger', 'load');
+      htmx.process(commentsDiv);
+    } else {
+      console.log('No Bluesky ID found for post:', post);
+    }
   }
 
   hljs.highlightAll();

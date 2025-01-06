@@ -19,6 +19,9 @@
   <script src="logic.js"></script>
   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    window.BLUESKY_DID = 'did:plc:kflooyw5fbmv6siiqwvnwqut';
+  </script>
   <title>Blog Post</title>
 </head>
 
@@ -37,6 +40,7 @@
     <h1 class="white" id="post-title"></h1>
     <div id="post-tags" class="tags"></div>
     <div id="post-content"></div>
+    <div id="bluesky-comments"></div>
   </div>
 
   <div hx-get="/components/copyright-notice.html" hx-trigger="load"></div>
