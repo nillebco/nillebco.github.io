@@ -1,5 +1,18 @@
 [
     {
+        "title": "add comments to your blog through BlueSky and ATProto [HTMX component]",
+        "slug": "add-comments-to-your-blog-with-bsky-and-atproto",
+        "tags": [
+            "HTMX",
+            "BlueSky",
+            "ATProto",
+            "comments"
+        ],
+        "date": "January 2, 2025",
+        "emoji": "🐳",
+        "bskyId":"FIXME"
+    },
+    {
         "title": "colima: a lightweight docker replacement",
         "slug": "colima-a-lightweight-docker-replacement",
         "tags": [
