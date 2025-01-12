@@ -1,5 +1,15 @@
 [
     {
+        "title": "Beware of AI: the \"Mirror on the Wall\" effect",
+        "slug": "ai-mirror-on-the-wall",
+        "tags": [
+            "AI"
+        ],
+        "date": "January 12, 2025",
+        "emoji": "🪞",
+        "bskyId":"3lf36lhlzgk2c"
+    },
+    {
         "title": "add comments to your blog through BlueSky and ATProto [HTMX component]",
         "slug": "add-comments-to-your-blog-with-bsky-and-atproto",
         "tags": [
@@ -9,7 +19,7 @@
             "comments"
         ],
         "date": "January 2, 2025",
-        "emoji": "🐳",
+        "emoji": "🕸️",
         "bskyId":"3lf36lhlzgk2c"
     },
     {
