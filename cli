@@ -1,7 +1,28 @@
 #!/bin/bash
 
+setup() {
+    uv venv
+    . .venv/bin/activate
+    uv pip install -r requirements.txt
+}
+
+compile() {
+    . .venv/bin/activate
+    uv pip compile requirements.in > requirements.txt
+}
+
+devsync() {
+    . .venv/bin/activate
+    uv pip sync requirements.txt
+}
+
 serve() {
     python -m http.server 8082
+}
+
+sync() {
+    . .venv/bin/activate
+    python sync_notion_posts.py
 }
 
 push() {
@@ -26,8 +47,20 @@ setup() {
 }
 
 case "$1" in
+    setup)
+        setup
+        ;;
+    devcompile)
+        compile
+        ;;
     serve)
         serve
+        ;;
+    devsync)
+        devsync
+        ;;
+    sync)
+        sync
         ;;
     push)
         push
