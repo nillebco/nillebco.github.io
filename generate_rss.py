@@ -6,9 +6,11 @@ import pytz
 def generate_rss():
     # Create feed generator
     fg = FeedGenerator()
+    link = 'https://nilleb.com'
     fg.title('Ivo Bellin Salarin Blog')
     fg.author({'name': 'Ivo Bellin Salarin'})
-    fg.link(href='https://nilleb.com', rel='alternate')
+    fg.link(href=link, rel='alternate')
+    fg.link(href=link, rel="self")
     fg.subtitle('Consulting in AI, ML, Search Engines, and Integrations')
     fg.language('en')
 
@@ -33,7 +35,7 @@ def generate_rss():
             fe.published(datetime.now(pytz.timezone('Europe/Paris')))
 
         fe.description(f"{post['emoji']} {', '.join(post['tags'])}")
-        fe.guid(post['slug'], permalink=True)
+        fe.guid(f"{link}/blog/post/#{post['slug']}", permalink=True)
 
     # Generate RSS feed
     fg.rss_file('feed.xml')
