@@ -7,7 +7,8 @@
         ],
         "date": "January 12, 2025",
         "emoji": "🪞",
-        "bskyId":"3lfknmw3rx22s"
+        "bskyId": "3lfknmw3rx22s",
+        "notion_id": "179023b48576806e8e41f2b31653df6f"
     },
     {
         "title": "add comments to your blog through BlueSky and ATProto [HTMX component]",
@@ -20,7 +21,8 @@
         ],
         "date": "January 2, 2025",
         "emoji": "🕸️",
-        "bskyId":"3lf36lhlzgk2c"
+        "bskyId": "3lf36lhlzgk2c",
+        "notion_id": "173023b4857680afa362d2fda9cca8b5"
     },
     {
         "title": "colima: a lightweight docker replacement",
@@ -30,7 +32,8 @@
             "docker alternatives"
         ],
         "date": "January 2, 2025",
-        "emoji": "🐳"
+        "emoji": "🐳",
+        "notion_id": "16f023b4857680e885e7d060e583f26c"
     },
     {
         "title": "Caddy as a reverse proxy in a podman rootless setup",
@@ -41,7 +44,8 @@
             "analytics"
         ],
         "date": "December 20, 2024",
-        "emoji": "🔐"
+        "emoji": "🔐",
+        "notion_id": "16f023b4857680a4bb15f09d3a9b3147"
     },
     {
         "title": "Terraform Cloud sensitive variables? forget about that",
@@ -50,7 +54,8 @@
             "terraform"
         ],
         "date": "December 16, 2024",
-        "emoji": "😱"
+        "emoji": "😱",
+        "notion_id": "15e023b485768070ba6cc825ba779085"
     },
     {
         "title": "Trying the Apple Vision Pro",
@@ -59,7 +64,8 @@
             "fun"
         ],
         "date": "December 13, 2024",
-        "emoji": "🤓"
+        "emoji": "🤓",
+        "notion_id": "15b023b4-8576-80df-acfa-ce40c741762f"
     },
     {
         "title": "The business year is over",
@@ -68,7 +74,8 @@
             "Business"
         ],
         "date": "December 12, 2024",
-        "emoji": "👨‍💼"
+        "emoji": "👨‍💼",
+        "notion_id": "15a023b4-8576-809a-8bb3-eaca7fae5cca"
     },
     {
         "title": "Création de EURL en France",
@@ -78,7 +85,8 @@
             "Legal"
         ],
         "date": "December 9, 2024",
-        "emoji": "🏢"
+        "emoji": "🏢",
+        "notion_id": "157023b4-8576-802d-94a9-d5ab5d522069"
     },
     {
         "title": "A Custom GPT to query, read and write your Google drive files",
@@ -89,7 +97,8 @@
             "Google"
         ],
         "date": "September 18, 2024",
-        "emoji": "✨"
+        "emoji": "✨",
+        "notion_id": "13b023b4-8576-8042-9d7d-e9902b2e4c96"
     },
     {
         "title": "Get all the OpenAI models (deployments) hosted on your Azure services",
@@ -110,7 +119,8 @@
             "nodeJS"
         ],
         "date": "September 17, 2024",
-        "emoji": "📈"
+        "emoji": "📈",
+        "notion_id": "106023b4-8576-8001-b37f-f9ab74ae29dc"
     },
     {
         "title": "Use podman as if it was docker (docker alias for podman)",
@@ -130,7 +140,8 @@
             "OpenAI"
         ],
         "date": "May 7, 2024",
-        "emoji": "🤖"
+        "emoji": "🤖",
+        "notion_id": "aadb26f3-31a8-4bab-ae47-8bf36423d9e3"
     },
     {
         "title": "Clustering vectors in higher dimensions",
@@ -140,7 +151,8 @@
             "vectors"
         ],
         "date": "February 25, 2024",
-        "emoji": "📊"
+        "emoji": "📊",
+        "notion_id": "ea226883-9228-4284-94bf-e5c4ce573680"
     },
     {
         "title": "Searching for people is not the same as searching for articles and media",
