@@ -1,8 +1,7 @@
-# Beware of AI: the Mirror on the Wall effect
+# Beware of AI: the "Mirror on the Wall" effect
 
 Tags: AI
 Publish Date: January 12, 2025
-Published: No
 
 Artificial intelligence is not your Mirror on the wall 🪞.
 
@@ -16,6 +15,7 @@ because of its inner functionings, AI is a statistical tool. It is going to repr
 
 Here I am pointing the fact that
 
+
 - laying out premises (any factual premise issued from human textual exchanges)
 - Then asking the AI “am I right?”
 
@@ -24,6 +24,7 @@ Will, with high probability, produce a positive answer.
 In the same way, AI is great at spotting words transmitting sentiments (do you remember all those "sentiment analysis” APIs about ten years ago?)
 
 My best advices about using objectively an AI:
+
 
 - Keep yourself out of the game (consider yourself one of the parties, not *the* party)
 - ask for common practices involving the parties in such a situation
