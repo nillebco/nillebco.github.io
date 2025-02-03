@@ -1,5 +1,17 @@
 [
     {
+        "title": "knack: generate a mapping from the UI",
+        "slug": "knack-generate-a-mapping-from-the-ui",
+        "tags": [
+            "knack",
+            "api"
+        ],
+        "date": "January 23, 2025",
+        "emoji": "🏴‍☠️",
+        "bskyId": "3lhbpgv6r7i2j",
+        "notion_id": "184023b485768083a525e8a9f3ef2be3"
+    },
+    {
         "title": "Beware of AI: the \"Mirror on the Wall\" effect",
         "slug": "ai-mirror-on-the-wall",
         "tags": [

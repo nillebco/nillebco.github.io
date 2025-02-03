@@ -4,3 +4,4 @@ python-slugify
 requests
 feedgen
 pytz
+atproto
