@@ -1,9 +1,8 @@
 import os
 import json
 import sys
-import requests
-from datetime import datetime, timezone
 import dotenv
+from atproto import client_utils, Client
 
 dotenv.load_dotenv()
 handle = os.getenv("BSKY_HANDLE")
@@ -25,34 +24,27 @@ if not post_data:
     print(f"No post found with slug: {slug}")
     sys.exit(1)
 
-# Create the post text with title and link
-post_text = (
-    f"{post_data['emoji']} {post_data['title']}\n\nhttps://nilleb.com/blog/post/{slug}"
-)
+if post_data["bskyId"]:
+    print(f"Post already exists with bskyId: {post_data['bskyId']}")
+    sys.exit(1)
 
-post = {
-    "$type": "app.bsky.feed.post",
-    "text": post_text,
-    "createdAt": datetime.now(timezone.utc).isoformat(),
-}
+link = f"https://nilleb.com/blog/post/#{slug}"
 
-session_resp = requests.post(
-    "https://bsky.social/xrpc/com.atproto.server.createSession",
-    json={"identifier": handle, "password": password},
-)
-session_resp.raise_for_status()
-session = session_resp.json()
+text_builder = client_utils.TextBuilder()
+post_text = f"{post_data['emoji']} {post_data['title']}\n\n"
+text_builder.text(post_text)
+text_builder.link(link, link)
+text_builder.text("\n\n")
+for tag in post_data["tags"]:
+    text_builder.tag(f"#{tag} ", tag)
 
-payload = {
-    "repo": session["did"],
-    "collection": "app.bsky.feed.post",
-    "record": post,
-}
+client = Client()
+client.login(handle, password)
+response = client.send_post(text_builder)
+print(response)
 
-if False:
-    post_resp = requests.post(
-        "https://bsky.social/xrpc/com.atproto.repo.createRecord",
-        headers={"Authorization": f"Bearer {session['accessJwt']}"},
-        json=payload,
-    )
-    post_resp.raise_for_status()
+bsky_id = response["uri"].split("/")[-1]
+post_data["bskyId"] = bsky_id
+
+with open("blog/posts.json", "w") as f:
+    json.dump(posts, f, indent=2)

@@ -48,7 +48,6 @@ setup() {
 
 tweet() {
     . .venv/bin/activate
-    echo ${@}
     python create_bsky_post.py ${@}
 }
 
