@@ -1,0 +1,13 @@
+{
+  "title": "Conseil en Intelligence Artificielle, Moteurs de Recherche, Intégrations",
+  "intro": "Je peux vous aider lorsque vous avez beaucoup d'informations mais que vous peinez à en extraire des connaissances.",
+  "data_quote": "On a dit un jour que les données sont le pétrole du 21ème siècle.",
+  "customer_pain": "Mes clients disposent d'une énorme quantité de données, fruit de dizaines d'années d'expérience. Mais ils peinent à en extraire des connaissances pertinentes. Ils se plaignent de processus chronophages et de la difficulté à intégrer de nouveaux employés.",
+  "work_description": "Mon travail consiste à trouver des moyens de transformer ces données d'entreprise en connaissances, afin d'apporter des insights à tous les employés.",
+  "tech_philosophy": "Je suis généralement allergique à l'utilisation abusive du terme IA. En revanche, j'aime les statistiques, le traitement du langage naturel (NLP), les grands modèles de langage (LLMs), les bases de données vectorielles, les moteurs de recherche.",
+  "skills": "Je crée des applications Web avec Python et React. J'utilise Terraform pour déployer les ressources nécessaires sur GCP, Azure ou AWS. Je peux vous aider à définir l'architecture et l'infrastructure d'une application Web. J'exploite les capacités des modèles d'IA pour fournir des services de recherche sémantique et de génération augmentée par la récupération.",
+  "contact": "Contactez-moi.",
+  "location": "Lyon, France.",
+  "main_site": "nillebco",
+  "blog": "Blog"
+} 

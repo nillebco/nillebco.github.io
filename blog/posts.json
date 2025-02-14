@@ -1,5 +1,16 @@
 [
     {
+        "title": "Projects I finished thanks to the AI this month",
+        "slug": "projects-i-finished-thanks-to-the-ai-this-month",
+        "tags": [
+            "AI",
+            "cursor"
+        ],
+        "date": "January 31, 2025",
+        "emoji": "⚡",
+        "notion_id": "184023b48576805ea1a4f01b990a2689"
+    },
+    {
         "title": "knack: generate a mapping from the UI",
         "slug": "knack-generate-a-mapping-from-the-ui",
         "tags": [
@@ -10,6 +21,17 @@
         "emoji": "🏴‍☠️",
         "bskyId": "3lhbpgv6r7i2j",
         "notion_id": "184023b485768083a525e8a9f3ef2be3"
+    },
+    {
+        "title": "terraform: event grid subscription for a service bus topic",
+        "slug": "terraform-event-grid-subscription-for-a-service-bus-topic",
+        "tags": [
+            "terraform",
+            "devops"
+        ],
+        "date": "January 17, 2025",
+        "emoji": "🌏",
+        "notion_id": "17c023b485768050856cc084fbc91a96"
     },
     {
         "title": "Beware of AI: the \"Mirror on the Wall\" effect",

@@ -12,16 +12,19 @@
   <link rel="stylesheet" href="./layout.css">
   <link rel="stylesheet" href="./blog.css">
   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/theme.js"></script>
   <title>nilleb's blog</title>
 </head>
 
-<body class="dark-mode">
+<body>
   <nav style="padding: 10px;">
-    <a href="/" style="text-decoration: underline; color: inherit;">nillebco</a> &gt;
-    <span>blog</span>
-    <a href="/feed.xml" style="margin-left: 10px;"><i class="fas fa-rss"></i></a>
+    <a href="/" style="text-decoration: underline; color: inherit;" data-i18n="main_site">nillebco</a> &gt;
+    <span data-i18n="blog">blog</span>
+    <a href="/feed.xml" style="margin-left: 10px;" title="RSS Feed"><i class="fas fa-rss"></i></a>
   </nav>
 
+  <div hx-get="/components/language-toggle.html" hx-trigger="load"></div>
   <div hx-get="/components/theme-toggle.html" hx-trigger="load"></div>
   <div hx-get="/components/toast-menu.html" hx-trigger="load"></div>
 
@@ -29,7 +32,7 @@
     <div class="section-2">
       <div class="page-icon"><span role="img" aria-label="🔬" class="page-icon">🔬</span>
       </div>
-      <h2>blog</h2>
+      <h2 data-i18n="blog">blog</h2>
       <ul id="blog-list" class="blog-list"></ul>
     </div>
   </div>

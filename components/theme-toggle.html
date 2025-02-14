@@ -5,19 +5,28 @@
 <script>
   document.addEventListener('htmx:afterSettle', function(evt) {
     const toggleButton = document.getElementById('theme-button');
+    const themeIcon = document.getElementById('theme-icon');
+
+    // Update icon based on current theme
+    function updateThemeIcon() {
+      if (currentTheme() === 'dark-mode') {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      }
+    }
+
     if (toggleButton && !toggleButton.hasListener) {
       toggleButton.hasListener = true;
       toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        themeIcon = document.getElementById('theme-icon');
-        if (document.body.classList.contains('dark-mode')) {
-          themeIcon.classList.remove('fa-moon');
-          themeIcon.classList.add('fa-sun');
-        } else {
-          themeIcon.classList.remove('fa-sun');
-          themeIcon.classList.add('fa-moon');
-        }
+        toggleTheme();
+        updateThemeIcon();
       });
+
+      // Set initial icon state
+      updateThemeIcon();
     }
   });
 </script> 
