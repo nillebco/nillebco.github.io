@@ -1,6 +1,6 @@
 [
     {
-        "title": "Projects I finished thanks to the AI this month",
+        "title": "Personal projects I finished thanks to the AI this month",
         "slug": "projects-i-finished-thanks-to-the-ai-this-month",
         "tags": [
             "AI",
@@ -158,8 +158,8 @@
         "notion_id": "106023b485768001b37ff9ab74ae29dc"
     },
     {
-        "title": "Use podman as if it was ",
-        "slug": "use-podman-as-if-it-was",
+        "title": "Use podman as if it was docker (docker alias for podman)",
+        "slug": "use-podman-as-if-it-was-docker-docker-alias-for-podman",
         "tags": [
             "script",
             "bash"
