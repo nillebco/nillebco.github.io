@@ -1,0 +1,23 @@
+<div class="language-button" style="position: fixed; top: 10px; right: 78px;">
+  <button id="language-button"><i id="language-icon" class="fas fa-language"></i></button>
+</div>
+
+<script>
+  document.addEventListener('htmx:afterSettle', function(evt) {
+    const toggleButton = document.getElementById('language-button');
+
+    if (toggleButton && !toggleButton.hasListener) {
+      toggleButton.hasListener = true;
+      toggleButton.addEventListener('click', () => {
+        const currentLang = document.documentElement.lang;
+        const newLang = currentLang === 'en' ? 'fr' : 'en';
+        loadTranslations(newLang);
+        
+        // Update URL without reloading the page
+        const url = new URL(window.location);
+        url.searchParams.set('lang', newLang);
+        window.history.pushState({}, '', url);
+      });
+    }
+  });
+</script> 

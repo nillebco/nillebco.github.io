@@ -11,38 +11,56 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="two-columns.css">
   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme.js"></script>
   <title>Ivo Bellin Salarin</title>
 </head>
 
-<body class="dark-mode">
+<body>
   <!-- Load components with HTMX -->
+  <div hx-get="/components/language-toggle.html" hx-trigger="load"></div>
   <div hx-get="/components/theme-toggle.html" hx-trigger="load"></div>
   <div hx-get="/components/toast-menu.html" hx-trigger="load"></div>
 
   <div class="grid-2">
     <div class="section-2">
-      <h3>Consulting in Artificial Intelligence, Machine Learning, Search Engines, Integrations</h3>
-      <p>I can help when you feel that you have a lot of information, but you struggle to get knowledge out of it.
+      <h3 data-i18n="title">Consulting in Artificial Intelligence, Search Engines, Integrations</h3>
+      <p data-i18n="intro">I can help when you feel that you have a lot of information, but you struggle to get
+        knowledge out of it.
       </p>
-      Somebody wrote once that Data is 21st Century Oil.
-      <p>My customers feel like they have a huge amount of data - based on tens of years of experience. But they
+      <p data-i18n="data_quote">Somebody wrote once that Data is 21st Century Oil.</p>
+      <p data-i18n="customer_pain">My customers feel like they have a huge amount of data - based on tens of years of
+        experience. But they
         struggle to find relevant knowledge out of it. They complain about time consuming processes and about
         the difficulty to onboard new employees.</p>
-      <p>My work is to find ways to refine this corporate data into knowledge, so to bring insights to all the
+      <p data-i18n="work_description">My work is to find ways to refine this corporate data into knowledge, so to bring
+        insights to all the
         employees.</p>
-      <p>I am generally allergic to the improper usage of the word AI. On the opposite, I love statistics, natural
+      <p data-i18n="tech_philosophy">I am generally allergic to the improper usage of the word AI. On the opposite, I
+        love statistics, natural
         language processing (NLP), large language models (LLMs), vector databases, search engines.</p>
-      <p>I create Web applications with Python and React. I use Terraform to spin off the required resources on
+      <p data-i18n="skills">I create Web applications with Python and React. I use Terraform to spin off the required
+        resources on
         GCP, Azure or AWS. I can help when defining the architecture and infrastructure of a Web Application. I
         leverage AI models capabilities to provide semantic search and retrieval-augmented-generation services.
       </p>
-      <p><a href="mailto:hello@nilleb.com?subject=Public%20website%20inquiry">Contact me.</a></p>
+      <p><a href="mailto:hello@nilleb.com?subject=Public%20website%20inquiry"><span data-i18n="contact">Contact
+            me.</span></a></p>
+      <div class="logo-container">
+        <a href="http://www.april.org/adherer"><img class="partner-logo"
+            src="http://www.april.org/files/membre-de-april-125x125.png"
+            alt="Membre de April.org - Promouvoir et soutenir le logiciel libre" /></a>
+        <a href="https://www.ploss-ra.fr/"><img class="partner-logo"
+            src="https://www.ploss-ra.fr/wp-content/uploads/2024/02/cropped-LOGO-BLEU-1.png"
+            alt="Membre des entreprises du Numérique Libre en Auvergne Rhône-Alpes" /></a>
+      </div>
     </div>
     <div class="section-1">
       <i class="fas fa-code fa-5x white"></i>
       <h2>Ivo Bellin Salarin</h2>
-      <p>Lyon, France.</p>
-      <a href="https://bsky.app/profile/nilleb.bsky.social"><i class="fab fa-bluesky"></i></a>
+      <p data-i18n="location">Lyon, France.</p>
+      <a href="https://bsky.app/profile/nilleb.io"><i class="fab fa-bluesky"></i></a>
+      <a href="https://x.com/nilleb"><i class="fab fa-twitter"></i></a>
       <a href="https://www.linkedin.com/in/bellin/"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/nilleb"><i class="fab fa-github"></i></a>
     </div>

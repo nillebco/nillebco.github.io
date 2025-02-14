@@ -1,5 +1,5 @@
 <div class="toast-button" style="position: fixed; top: 10px; right: 10px;">
-  <button><i class="fas fa-bars"></i></button>
+  <button id="toast-button"><i class="fas fa-bars"></i></button>
   <div id="toast-menu" class="toast-menu hidden">
     <a href="/portfolio" style="display: block; padding: 10px;">Portfolio</a>
     <a href="/" style="display: block; padding: 10px;">Main Site</a>
@@ -10,7 +10,7 @@
 
 <script>
   document.addEventListener('htmx:afterSettle', function(evt) {
-    const toastButton = document.querySelector('.toast-button button');
+    const toastButton = document.getElementById('toast-button');
     const toastMenu = document.getElementById('toast-menu');
     if (toastButton && !toastButton.hasListener) {
       toastButton.hasListener = true;

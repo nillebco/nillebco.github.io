@@ -152,6 +152,11 @@ def generate_markdown_file(notion_id, post_data=None):
         # For existing posts, we'll need to fetch content
         content_blocks = notion.blocks.children.list(block_id=notion_id.replace("-", ""))
     
+    file_path = f"blog/post/{slug}.md"
+    if os.path.exists(file_path):
+        print(f"Skipping {slug} because it already exists")
+        return None
+    
     # Create the markdown content
     markdown_content = []
     
@@ -230,7 +235,6 @@ def generate_markdown_file(notion_id, post_data=None):
     os.makedirs("blog/post", exist_ok=True)
     
     # Write the markdown file
-    file_path = f"blog/post/{slug}.md"
     with open(file_path, "w", encoding="utf-8") as f:
         f.write("\n".join(markdown_content))
     
