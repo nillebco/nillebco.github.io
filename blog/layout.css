@@ -4,7 +4,7 @@
     max-width: 1400px;
     margin: 0 auto;
     gap: 2rem;
-    padding: 0 max(1rem, calc((100vw - 1200px) / 2));
+    padding: 0 max(1rem, calc((100vw - 1400px) / 2));
 }
 
 .section-2 {
@@ -54,10 +54,15 @@
     .grid-2 {
         grid-template-columns: minmax(auto, 700px);
         justify-content: center;
+        padding: 0 1rem;
     }
     
     .section-2 {
         padding: 2rem;
+    }
+
+    .section-2 h2 {
+        width: 100%;
     }
 }
 
