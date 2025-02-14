@@ -1,4 +1,4 @@
-# Projects I finished thanks to the AI this month
+# Personal projects I finished thanks to the AI this month
 
 Tags: AI, cursor
 Publish Date: January 31, 2025
