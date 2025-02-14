@@ -1,43 +1,45 @@
 .grid-2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(auto, 1fr) minmax(auto, 800px);
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 0 max(1rem, calc((100vw - 1200px) / 2));
 }
 
 .section-2 {
     line-height: 1.4;
     font-size: 14px;
-    padding: 0 10px;
-    margin: 50px auto;
-    max-width: 800px;
-    max-width: 60em;
-    margin: 15 auto;
-    padding-top: 10vh;
-    padding-left: 20em;
+    padding: 10vh 2rem 0 2rem;
+    margin: 0;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .section-2 h2 {
     font-size: 1.7rem;
     margin-bottom: 10px;
+    width: 800px;
 }
 
 .section-2 h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    width: auto;
 }
 
 .section-2 p {
     font-size: 1rem;
     padding-bottom: 10px;
     margin: 0;
+    width: auto;
 }
 
 .section-2 a {
-    display: block;
-    padding: 5px;
+    display: inline-block;
+    padding: 5px 0;
     font-size: 1.2rem;
-    padding-left: 0;
-    width: 150px;
+    text-decoration: none;
 }
 
 .section-2 a:hover {
@@ -45,4 +47,28 @@
     color: var(--accent-color);
     cursor: pointer;
     transition: 0.2s;
+}
+
+/* Media queries for responsive layout */
+@media(max-width:1024px) {
+    .grid-2 {
+        grid-template-columns: minmax(auto, 700px);
+        justify-content: center;
+    }
+    
+    .section-2 {
+        padding: 2rem;
+    }
+}
+
+@media(max-width:780px) {
+    .section-2 {
+        padding: 1rem;
+    }
+}
+
+@media(max-width:480px) {
+    .section-2 {
+        padding: 0.5rem;
+    }
 }
