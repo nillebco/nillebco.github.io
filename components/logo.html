@@ -1,0 +1,35 @@
+<!-- Logo component -->
+<div class="site-logo">
+    <a href="/">
+        <img src="/assets/logo-xs.png" alt="Site Logo" width="40" height="40">
+    </a>
+</div>
+
+<style>
+/* Default style for blog pages (inline) */
+.site-logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+/* Style for main page (fixed position) */
+body:not(:has(nav)) .site-logo {
+    position: fixed;
+    top: .5rem;
+    left: .5rem;
+    z-index: 100;
+    margin-right: 0;
+}
+
+.site-logo img {
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    vertical-align: middle;
+}
+
+.site-logo img:hover {
+    transform: scale(1.1);
+}
+</style> 
