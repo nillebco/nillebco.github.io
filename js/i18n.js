@@ -10,6 +10,11 @@ async function loadTranslations(locale) {
         applyTranslations();
         // Update HTML lang attribute
         document.documentElement.lang = locale;
+        
+        // Call page-specific translation function if it exists
+        if (typeof window.applyPageTranslations === 'function') {
+            window.applyPageTranslations(locale);
+        }
     } catch (error) {
         console.error('Error loading translations:', error);
         // Fallback to English if translation loading fails

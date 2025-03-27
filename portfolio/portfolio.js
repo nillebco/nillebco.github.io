@@ -74,9 +74,22 @@ function setupCopyLinks() {
   });
 }
 
-async function loadPortfolio() {
+// Function to handle portfolio page translations
+window.applyPageTranslations = function(locale) {
+    loadPortfolio(locale);
+}; 
+
+async function loadPortfolio(locale) {
+  // If no locale is provided, check URL query parameter
+  if (!locale) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    locale = langParam || document.documentElement.lang || 'en';
+  }
+
   try {
-    const response = await fetch('./portfolio.md');
+    const fileName = locale === 'fr' ? 'portfolio-fr.md' : 'portfolio.md';
+    const response = await fetch(`./${fileName}`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
