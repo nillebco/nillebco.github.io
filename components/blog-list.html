@@ -1,11 +1,17 @@
-<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<script src="https://unpkg.com/htmx.org@1.9.10?v=1"></script>
 <script>
   document.addEventListener('htmx:afterSettle', async function(evt) {
     const blogList = document.getElementById('blog-list');
     if (blogList && !blogList.hasContent) {
       blogList.hasContent = true;
       
-      const response = await fetch('posts.json?k=' + Date.now());
+      const response = await fetch('posts.json', {
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      });
       const posts = await response.json();
 
       blogList.innerHTML = posts.map(post => `

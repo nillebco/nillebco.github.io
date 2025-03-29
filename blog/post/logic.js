@@ -33,7 +33,13 @@ async function loadPost() {
   document.getElementById('breadcrumb-title').innerText = title;
   document.title = `Blog Post: ${title}`;
 
-  const postsResponse = await fetch('../posts.json?k=' + Date.now());
+  const postsResponse = await fetch('../posts.json', {
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      });
   const posts = await postsResponse.json();
   const post = posts.find(p => p.slug === slug);
   if (post) {
