@@ -33,7 +33,7 @@ async function loadPost() {
   document.getElementById('breadcrumb-title').innerText = title;
   document.title = `Blog Post: ${title}`;
 
-  const postsResponse = await fetch('../posts.json');
+  const postsResponse = await fetch('../posts.json?k=' + Date.now());
   const posts = await postsResponse.json();
   const post = posts.find(p => p.slug === slug);
   if (post) {
