@@ -1,5 +1,18 @@
 [
     {
+        "title": "Drive cursor with your voice - local setup",
+        "slug": "drive-cursor-with-your-voice-local-setup",
+        "tags": [
+            "AI",
+            "Cursor",
+            "whisper",
+            "speech to text"
+        ],
+        "date": "March 29, 2025",
+        "emoji": "🎧",
+        "notion_id": "none"
+    },
+    {
         "title": "Giving Webpages a Voice: A Chrome Extension for Conversational Browsing",
         "slug": "giving-webpages-a-voice-a-chrome-extension-for-conversational-browsing",
         "tags": [
