@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Business Card - Ivo Bellin Salarin</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css"
+    integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+    @page {
+      size: 85mm 55mm;
+      margin: 0;
+    }
+    body {
+      margin: 0;
+      background-color: #ccc;
+    }
+    .card {
+      --bg-color: #101214;
+      --text-color: #7A7C80;
+      --accent-color: #fff;
+      width: 85mm;
+      height: 55mm;
+      box-sizing: border-box;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      border: 1px solid var(--text-color);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+    .card-left {
+      flex: 0 0 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 4mm;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .logo-img {
+      max-width: 100%;
+      max-height: 80%;
+      object-fit: contain;
+      margin-left: 8mm;
+    }
+    .company-name {
+      font-size: 8pt;
+      color: var(--accent-color);
+      margin-top: 2mm;
+      text-align: center;
+      margin-left: 8mm;
+    }
+    .card-right {
+      flex: 0 0 70%;
+      padding: 8mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .name {
+      font-size: 16pt;
+      font-weight: bold;
+      margin-bottom: 1mm;
+      color: var(--accent-color);
+    }
+    .title {
+      font-size: 10pt;
+      color: var(--text-color);
+      margin-bottom: 3mm;
+    }
+    .contact {
+      font-size: 10pt;
+    }
+    .social-icons a {
+      color: var(--text-color);
+      margin-right: 2mm;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .social-icons a:hover {
+      color: var(--accent-color);
+    }
+    .social-icons a:last-child {
+      margin-right: 0;
+    }
+    .social-icons i {
+      font-size: 12pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-left">
+      <img src="../assets/logo.jpg" alt="NillebCo Logo" class="logo-img">
+      <div class="company-name">nillebco</div>
+    </div>
+    <div class="card-right">
+      <div class="name">Ivo Bellin Salarin</div>
+      <div class="title">Consulting in AI, Search Engines, Integrations</div>
+      <div class="contact">
+        ivo@nilleb.com<br>
+        <div class="social-icons" style="margin-top: 3mm;">
+          <a href="https://bsky.app/profile/nilleb.io" target="_blank"><i class="fab fa-bluesky"></i></a>
+          <a href="https://x.com/nilleb" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/nilleb" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
