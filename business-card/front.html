@@ -16,8 +16,9 @@
     }
     .card {
       --bg-color: #101214;
-      --text-color: #9FA3A9;
+      --text-color: #A1A5AB;
       --accent-color: #ffffff;
+      --highlight-color: #00BFCF;
       width: 85mm;
       height: 55mm;
       font-family: 'Roboto', sans-serif;
@@ -25,13 +26,11 @@
       color: var(--text-color);
       display: flex;
       flex-direction: row;
-      border: none;
       box-sizing: border-box;
     }
 
     .card-left {
-      flex: 0 0 40%;
-      background-color: #1A1C1F;
+      background-color: #181A1D;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -40,22 +39,22 @@
     }
 
     .logo-img {
-      max-width: 100%;
+      max-width: 90%;
       max-height: 60%;
       object-fit: contain;
-      margin-bottom: 4mm;
+      margin-bottom: 3mm;
     }
 
     .company-name {
       font-size: 9pt;
-      color: var(--accent-color);
+      color: var(--highlight-color);
       text-align: center;
       letter-spacing: 0.5px;
     }
 
     .card-right {
       flex: 1;
-      padding: 6mm 6mm 6mm 4mm;
+      padding: 6mm 8mm 6mm 4mm;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -65,33 +64,35 @@
       font-size: 13pt;
       font-weight: 700;
       color: var(--accent-color);
-      margin-bottom: 1mm;
+      margin-bottom: 1.5mm;
       white-space: nowrap;
     }
 
     .title {
       font-size: 9pt;
-      line-height: 1.3;
+      line-height: 1.4;
       margin-bottom: 4mm;
     }
 
     .contact {
       font-size: 9pt;
-      margin-bottom: 2mm;
       color: var(--accent-color);
+      margin-bottom: 2.5mm;
     }
 
     .social-icons {
       display: flex;
+      align-items: center;
       gap: 4mm;
-      margin-top: 2mm;
+      margin-bottom: 3mm;
     }
 
     .social-icons a {
-      color: var(--text-color);
+      color: var(--highlight-color);
       text-decoration: none;
-      font-size: 11pt;
+      font-size: 10.5pt;
       transition: color 0.2s ease-in-out;
+      display: flex; align-items: center; gap: 6px;
     }
 
     .social-icons a:hover {
@@ -99,9 +100,8 @@
     }
 
     .website {
-      font-size: 8pt;
-      margin-top: 2mm;
-      color: var(--text-color);
+      font-size: 8.5pt;
+      color: var(--highlight-color);
     }
   </style>
 </head>
@@ -120,7 +120,6 @@
         <a href="https://x.com/nilleb" target="_blank"><i class="fab fa-x-twitter"></i></a>
         <a href="https://github.com/nilleb" target="_blank"><i class="fab fa-github"></i></a>
       </div>
-      <div class="website">nilleb.io</div>
     </div>
   </div>
 </body>
