@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Business Card Back</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+    @page {
+      size: 85mm 55mm;
+      margin: 0;
+    }
+    body {
+      margin: 0;
+      background-color: #ccc;
+    }
+    .card-back {
+      width: 85mm;
+      height: 55mm;
+      background-color: #101214;
+      color: #A1A5AB;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6mm;
+      box-sizing: border-box;
+    }
+    .info {
+      font-size: 9pt;
+      margin-bottom: 4mm;
+      line-height: 1.6;
+    }
+    .highlight {
+      color: #00BFCF;
+    }
+    .qr {
+      width: 20mm;
+      height: 20mm;
+      margin-top: 2mm;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-back">
+    <div class="info">
+      <div><span class="highlight">📧</span> ivo@nilleb.com</div>
+      <div><span class="highlight">🌐</span> nilleb.com</div>
+      <div><span class="highlight">🐙</span> github.com/nilleb</div>
+      <div><span class="highlight">🕊</span> bsky.app/profile/nilleb.io</div>
+    </div>
+    <img src="../assets/qr-code-nillebco-black-white.png" alt="QR Code" class="qr">
+  </div>
+</body>
+</html>
