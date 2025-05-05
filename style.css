@@ -5,12 +5,14 @@
     --bg-color: white;
     --text-color: black;
     --accent-color: #000;
+    --highlight-color: #00BFCF;
 }
 
 .dark-mode {
     --bg-color: #101214;
     --text-color: #7A7C80;
     --accent-color: #fff;
+    --highlight-color: #00BFCF;
 }
 
 .hidden {
@@ -154,4 +156,8 @@ span.page-icon {
 .dark-mode .language-button button,
 .dark-mode .toast-button button {
   color: #fff;
+}
+
+.social-icons {
+  color: var(--highlight-color);
 }

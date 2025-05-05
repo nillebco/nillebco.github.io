@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Business Card Back</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+    @page {
+      size: 85mm 55mm;
+      margin: 0;
+    }
+    body {
+      margin: 0;
+      background-color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .card-back {
+      width: 85mm;
+      height: 55mm;
+      background-color: #FFFFFF;
+      color: #000000;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6mm;
+      box-sizing: border-box;
+      border: 1px solid #F0F0F0;
+      border-radius: 3mm;
+    }
+    .info {
+      font-size: 9pt;
+      margin-bottom: 4mm;
+      line-height: 1.8;
+    }
+    .info i {
+      color: #000000;
+      margin-right: 4px;
+    }
+    .qr {
+      width: 20mm;
+      height: 20mm;
+      margin-top: 6mm;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-back">
+    <div class="info">
+      <div><i class="fas fa-envelope"></i>ivo@nilleb.com</div>
+      <div><i class="fas fa-globe"></i>nilleb.com</div>
+      <div><i class="fab fa-github"></i>github.com/nilleb</div>
+      <div><i class="fab fa-bluesky"></i>bsky.app/profile/nilleb.io</div>
+    </div>
+    <img src="../assets/qr-code-nillebco-black-white.png" alt="QR Code" class="qr">
+  </div>
+</body>
+</html>
