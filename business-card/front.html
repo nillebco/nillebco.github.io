@@ -12,7 +12,11 @@
     }
     body {
       margin: 0;
-      background-color: #ccc;
+      background-color: #101214;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
     .card {
       --bg-color: #101214;
@@ -27,10 +31,12 @@
       display: flex;
       flex-direction: row;
       box-sizing: border-box;
+      border: 1px solid #181A1D;
+      border-radius: 3mm;
     }
 
     .card-left {
-      background-color: #181A1D;
+      /* background-color: #181A1D; */ /* Removed to inherit from .card */
       display: flex;
       flex-direction: column;
       align-items: center;
