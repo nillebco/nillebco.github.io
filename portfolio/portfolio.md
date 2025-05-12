@@ -20,6 +20,8 @@ Simple nodeJS based service that returns openAI real-time video ephemeral keys (
 
 ## personal assistant for signal, telegram, whatsapp
 
+Tags: #gemini #mistral #claude #openai #whatsapp #signal #telegram #social-interactions #ai
+
 For a long while I have been hosting a proxy to OpenAI via Signal, WhatsApp and Telegram. I was thinking that AI access should be shared with friends, because it's incredibly useful in social interactions (make a summary of the ongoing conversations, access tools, perform simple tasks, access different models according to the need, ...)
 
 ### more about this
@@ -27,6 +29,8 @@ For a long while I have been hosting a proxy to OpenAI via Signal, WhatsApp and 
 [An AI-based Instant Messaging Assistant](https://nilleb.com/blog/#an-ai-based-instant-messaging-assistant)
 
 ## Azure, GCP, Hetzner resources management with terraform
+
+Tags: #devops #terraform #gcp #azure #hetzner
 
 Infrastructure as Code allows reproducibility, traceability and observability to organizations. Each organization is unique, with its own policies. We use terraform to manage organizational resources in Cloud Native environments, and sentinel policies to enforce organizational requirements.
 
@@ -42,10 +46,13 @@ Our Token Exchange Services allow a seamless integration between different web a
   - Bunchball (gamification)
   - Coveo (Search & Semantic Search)
   - Looker
+  - Achievers
 
 ## A chatbot answering any LumApps related question
 
-[LumApps](https://www.lumapps.com/) (a Digital Workplace) offers a public [documentation web site](https://docs.lumapps.com/docs/). It’s a gold mine, and we use it a lot, at [Ariella Digital Consulting](https://www.arielladigitalconsulting.com/).
+Tags: #LLM #Q&A #RAG #retrieval-augmented-generation #formats-conversion
+
+[LumApps](https://www.lumapps.com/) (a Digital Workplace) offers a public [documentation web site](https://docs.lumapps.com/docs/). It’s a gold mine, and we use it a lot, at [Ariella Digital Consulting](https://www.arielladigitalconsulting.com/?utm_source=nilleb.com).
 
 So we have
 
@@ -73,23 +80,25 @@ Whenever a user asks a question to our bot, we
 
 This is a sample of what we get, when querying our little LumDocsBot:
 
-### Which widgets are supported on mobile?
-
-Supported widgets on mobile include Comments, Content list, Drive, Featured image, File list, File management, HTML content, iFrame, Image gallery, Introduction, Links, Mandatory read, Metadata, Play, Title, Users list, and Video. [Source](https://docs.lumapps.com/docs/mobile-l3073093865382487)
-
-### What do I need to build a digital assistant?
-
-To create a new digital assistant, you need to go to the Digital Assistant web app and log in, click NEW assistant to open the Customize you assistant wizard, select a standard (en or fr), create the assistant, give it a personality, add email addresses for users you want to add as Technical staff and Assistant managers, and configure the assistant knowledge by building resources and enhancing the comprehension. Source: https://docs.lumapps.com/docs/knowledge-l9660062419741646DA
-
-### My Google integrations don't work. Can you help me?
-
-Verify which rights are granted for the LumApps application on Google admin side. Go to https://admin.google.com/ac/apps/gmail/marketplace/domaininstall. Make sure that the LumApps application is activated for all of the OUs containing the users that should access the GSuite integrations. If it is not activated, follow the Google documentation (https://support.google.com/a/answer/172931?hl=en) to activate it. In the LumApps app, access Data Access and make sure that all the Google services you need are Granted. If Status reads Partially granted or Revoked, it means some services are not accessible by LumApps. Make sure to grant their access. If the integrations still do not show in LumApps, uninstall the LumApps app in GSuite and try installing it again. Make sure you are not skipping any step from the LumApps installation documentation (https://docs.lumapps.
-
-### Which are the custom dimensions in Google Analytics 4?
-
-Customer ID, Customer Name, Site ID, Site Name, Site Slug, Content Internal Type, Content Type ID, Content Type Name, Content Is Homepage, Content ID, Content Title, Content Slug, Content Tag IDs, Content Tags, Content Metadata IDs, Content Metadata, Search Terms, User Is Admin, User Primary Language, and User Secondary Language. Source: https://docs.lumapps.com/docs/knowledge-l24187961517950485
+> **Q: Which widgets are supported on mobile?**
+>
+> Supported widgets on mobile include Comments, Content list, Drive, Featured image, File list, File management, HTML content, iFrame, Image gallery, Introduction, Links, Mandatory > read, Metadata, Play, Title, Users list, and Video. [Source](https://docs.lumapps.com/docs/mobile-l3073093865382487)
+>
+> **Q: What do I need to build a digital assistant?**
+>
+> To create a new digital assistant, you need to go to the Digital Assistant web app and log in, click NEW assistant to open the Customize you assistant wizard, select a standard (en > or fr), create the assistant, give it a personality, add email addresses for users you want to add as Technical staff and Assistant managers, and configure the assistant knowledge by building resources and enhancing the comprehension. Source: https://docs.lumapps.com/docs/knowledge-l9660062419741646DA
+>
+> **Q: My Google integrations don't work. Can you help me?**
+>
+> Verify which rights are granted for the LumApps application on Google admin side. Go to https://admin.google.com/ac/apps/gmail/marketplace/domaininstall. Make sure that the LumApps > application is activated for all of the OUs containing the users that should access the GSuite integrations. If it is not activated, follow the Google documentation (https://support.google.com/a/answer/172931?hl=en) to activate it. In the LumApps app, access Data Access and make sure that all the Google services you need are Granted. If Status reads Partially granted or Revoked, it means some services are not accessible by LumApps. Make sure to grant their access. If the integrations still do not show in LumApps, uninstall the LumApps app in GSuite and try installing it again. Make sure you are not skipping any step from the LumApps installation documentation (https://docs.lumapps.
+>
+> **Q: Which are the custom dimensions in Google Analytics 4?**
+>
+> Customer ID, Customer Name, Site ID, Site Name, Site Slug, Content Internal Type, Content Type ID, Content Type Name, Content Is Homepage, Content ID, Content Title, Content Slug, C> ontent Tag IDs, Content Tags, Content Metadata IDs, Content Metadata, Search Terms, User Is Admin, User Primary Language, and User Secondary Language. Source: https://docs.lumapps.com/docs/knowledge-l24187961517950485
 
 ## The Expertise Locator
+
+Tags: #semantic-search #people-search #LLM #word-embeddings #postgres #pgvector #fts
 
 This company wishes to improve the collaboration across their departments and reduce the onboarding attrition.
 
