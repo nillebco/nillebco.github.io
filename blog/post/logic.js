@@ -6,13 +6,57 @@ function getRandomColor() {
 }
 
 function parseMarkdown(markdown) {
+  // Check if the markdown has frontmatter (starts with ---)
+  if (markdown.startsWith('---')) {
+    // Find the end of frontmatter (second ---)
+    const frontmatterEnd = markdown.indexOf('---', 3);
+    if (frontmatterEnd !== -1) {
+      // Extract frontmatter content
+      const frontmatter = markdown.substring(3, frontmatterEnd).trim();
+      // Extract content (everything after the second ---)
+      const content = markdown.substring(frontmatterEnd + 3).trim();
+      
+      // Parse frontmatter (simple YAML parsing)
+      const metadata = {};
+      const frontmatterLines = frontmatter.split('\n');
+      
+      for (const line of frontmatterLines) {
+        const colonIndex = line.indexOf(':');
+        if (colonIndex !== -1) {
+          const key = line.substring(0, colonIndex).trim();
+          let value = line.substring(colonIndex + 1).trim();
+          
+          // Remove quotes if present
+          if ((value.startsWith('"') && value.endsWith('"')) || 
+              (value.startsWith("'") && value.endsWith("'"))) {
+            value = value.slice(1, -1);
+          }
+          
+          metadata[key] = value;
+        }
+      }
+      
+      // Extract title from content (first line starting with #)
+      const contentLines = content.split('\n');
+      const titleLine = contentLines.find(line => line.startsWith('# '));
+      const title = titleLine ? titleLine.replace('# ', '') : '';
+      
+      // Parse tags and published date from metadata
+      const tags = metadata.tags ? metadata.tags.split(',').map(tag => tag.trim()) : [];
+      const publishedDate = metadata.publishedDate || metadata.date || '';
+      
+      return { title, tags, content, publishedDate };
+    }
+  }
+  
+  // Fallback to original parsing for backward compatibility
   const lines = markdown.split('\n');
   const titleLine = lines.shift();
   const title = titleLine?.startsWith('#') ? titleLine.replace('# ', '') : '';
   const tagsLine = lines.find(line => line.startsWith('Tags: '));
-  const tags = tagsLine.replace('Tags: ', '').split(',').map(tag => tag.trim());
+  const tags = tagsLine ? tagsLine.replace('Tags: ', '').split(',').map(tag => tag.trim()) : [];
   const publishedDateLine = lines.find(line => line.startsWith('Publish Date: '));
-  const publishedDate = publishedDateLine.replace('Publish Date: ', '');
+  const publishedDate = publishedDateLine ? publishedDateLine.replace('Publish Date: ', '') : '';
   const contentLines = lines.filter(line => !line.startsWith('Tags: ') && !line.startsWith('Publish Date: ') && !line.startsWith('Published: '));
   const content = contentLines.join('\n');
   return { title, tags, content, publishedDate };
