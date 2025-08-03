@@ -1,8 +1,13 @@
-# Generate a JSON Schema for OpenAI Structured Outputs
+---
+tags:
+  - OpenAI
+  - nodeJS
+  - python
+date: 2024-09-19
+published: true
+---
 
-Tags: OpenAI, nodeJS, python
-Publish Date: September 19, 2024
-Published: Yes
+# Generate a JSON Schema for OpenAI Structured Outputs
 
 Maybe you are a nodeJS developer and you need to pass a json_schema to your chat.completion call
 
@@ -22,7 +27,7 @@ Something like this:
 
 But the, how should that `responseFormat` look like?
 
-I didn’t know how to implement this using just nodeJS - so I dug a bit into the openAI parse method, and extracted a little helper, in python
+I didn't know how to implement this using just nodeJS - so I dug a bit into the openAI parse method, and extracted a little helper, in python
 
 ```python
 import json

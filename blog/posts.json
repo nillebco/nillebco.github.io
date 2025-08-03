@@ -1,5 +1,17 @@
 [
     {
+        "title": "Do you use AI to evaluate CVs?",
+        "slug": "do-you-use-ai-to-evaluate-cvs",
+        "tags": [
+            "AI",
+            "EU",
+            "HR"
+        ],
+        "date": "July 7, 2025",
+        "emoji": "✨",
+        "notion_id": "none"
+    },
+    {
         "title": "Drive cursor with your voice - local setup",
         "slug": "drive-cursor-with-your-voice-local-setup",
         "tags": [
@@ -9,7 +21,7 @@
             "speech to text"
         ],
         "date": "March 29, 2025",
-        "emoji": "🎧",
+        "emoji": "🎤",
         "notion_id": "none"
     },
     {

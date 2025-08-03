@@ -1,8 +1,10 @@
+---
+tags:
+  - fun
+published: "true"
+date: 2024-12-13
+---
 # Trying the Apple Vision Pro
-
-Tags: fun
-Publish Date: December 13, 2024
-Published: Yes
 
 What has most impressed me about this trial are the immersive experiences, such as watching an NBA match from the court side, walking on a rope suspended between two cliffs and the "peaceful moments".
 

@@ -1,8 +1,12 @@
-# Personal projects I finished thanks to the AI this month
+---
+tags:
+  - AI
+  - cursor
+date: 2025-01-31
+published: true
+---
 
-Tags: AI, cursor
-Publish Date: January 31, 2025
-Published: Yes
+# Personal projects I finished thanks to the AI this month
 
 I have a cursor license; so let's use it to tick some ideas off the backlog 😊
 
@@ -11,7 +15,7 @@ I have a cursor license; so let's use it to tick some ideas off the backlog 😊
     - in javascript (express + react)
     - Sign in with Google
     - In french, italian, english
-    - select a language, a theme and the number of "teams”, then let an AI generate the questions
+    - select a language, a theme and the number of "teams", then let an AI generate the questions
     - the number of questions, their difficulty and the time to answer them
     - *carré ou cache* ?
     - let the AI evaluate how good your answer was

@@ -1,8 +1,12 @@
-# colima:  a lightweight docker replacement
+---
+tags:
+  - containers
+  - docker alternatives
+date: 2025-01-02
+published: true
+---
 
-Tags: containers, docker alternatives
-Publish Date: January 2, 2025
-Published: Yes
+# colima:  a lightweight docker replacement
 
 [https://github.com/abiosoft/colima](https://github.com/abiosoft/colima)
 

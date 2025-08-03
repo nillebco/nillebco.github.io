@@ -1,7 +1,14 @@
-# add comments to your blog with BlueSky and ATProto [HTMX component]
+---
+tags:
+  - ATProto
+  - BlueSky
+  - HTMX
+  - comments
+date: 2025-01-06
+published: true
+---
 
-Tags: ATProto, BlueSky, HTMX, comments
-Publish Date: January 6, 2025
+# add comments to your blog with BlueSky and ATProto [HTMX component]
 
 I have recently switched my personal website to [HTMX](https://htmx.org/).
 
@@ -44,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 You still have to
 
-- retrieve your DID (you could visit your bluesky profile or any of your tweets with your network tools open and filter on "profile”; the string after %3A is your DID), or just execute this code in your Console
+- retrieve your DID (you could visit your bluesky profile or any of your tweets with your network tools open and filter on "profile"; the string after %3A is your DID), or just execute this code in your Console
 
 ```jsx
  JSON.parse(localStorage.BSKY_STORAGE).session.currentAccount.did

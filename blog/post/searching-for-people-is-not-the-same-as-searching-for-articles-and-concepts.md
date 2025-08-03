@@ -1,12 +1,15 @@
+---
+tags:
+  - Search
+date: 2024-02-23
+published: true
+---
+
 # Searching for people is not the same as searching for articles and concepts
 
-Tags: Search
-Publish Date: February 23, 2024
-Published: Yes
+The aim of this post is to share my experience in implementing [a people search engine](https://www.youtube.com/watch?v=pgWgT89l-e8&pp=ygUtcGVvcGxlIGZpbmRlciBoYWNrYXRvbiBhc2lhbiBkZXZlbG9wbWVudCBiYW5r) for a multicultural environment such as the Asian Development Bank. In this post, I will focus on "searching a person" only - the part "search for an expert" will be the subject of the next post.
 
-The aim of this post is to share my experience in implementing [a people search engine](https://www.youtube.com/watch?v=pgWgT89l-e8&pp=ygUtcGVvcGxlIGZpbmRlciBoYWNrYXRvbiBhc2lhbiBkZXZlbG9wbWVudCBiYW5r) for a multicultural environment such as the Asian Development Bank. In this post, I will focus on “searching a person” only - the part “search for an expert” will be the subject of the next post.
-
-Cultural differences make that searching for a person is often hard. In Asia, you can’t even imagine counting all the existing cultures. Even if your workplace assumes that every employee uses English for their everyday job, differences in prononciation and context transform a simple task in a nightmare. Usually this ends up calling a Friend of a Friend who still remembers that person that you need to call.
+Cultural differences make that searching for a person is often hard. In Asia, you can't even imagine counting all the existing cultures. Even if your workplace assumes that every employee uses English for their everyday job, differences in prononciation and context transform a simple task in a nightmare. Usually this ends up calling a Friend of a Friend who still remembers that person that you need to call.
 
 In terms of off-the-shelf solutions you may find some relief in your default digital workplace (what a chance to be able to browse the profile pictures all your colleagues!) but…
 

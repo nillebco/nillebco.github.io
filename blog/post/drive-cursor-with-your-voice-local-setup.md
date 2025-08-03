@@ -1,7 +1,13 @@
-# Drive cursor with your voice - local setup
+---
+tags:
+    - AI
+    - Cursor
+    - whisper
+    - speech to text
+date: March 29, 2025
+---
 
-Tags: AI, Cursor, whisper, speech to text
-Publish Date: March 29, 2025
+# Drive cursor with your voice - local setup
 
 I found an interesting extension for VSCode that allows you to use a local whisper server to transcribe your thoughts into cursor chat commands
 

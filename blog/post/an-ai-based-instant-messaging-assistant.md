@@ -1,10 +1,14 @@
+---
+tags:
+  - OpenAI
+  - python
+date: 2024-05-07
+published: true
+---
+
 # An AI-based Instant Messaging Assistant
 
-Tags: OpenAI, python
-Publish Date: May 7, 2024
-Published: Yes
-
-What I’m introducing today is the nilleb’s family assistant. I use this bot to serve the requests of my family and close friends.
+What I'm introducing today is the nilleb's family assistant. I use this bot to serve the requests of my family and close friends.
 
 The aim was to
 
@@ -20,18 +24,18 @@ Today this bot
     - all the claude3 models
     - all the mistral models
     - dalle3
-- supports voice messages and processing attachments (such as image files, to support “vision” requests
+- supports voice messages and processing attachments (such as image files, to support "vision" requests
 - supports tools calling
-    - with a different perimeter for every user (ie. all users will have access to a common set of functions, users who have supplied a “tool configuration” will have access to the functions associated to that “tool”)
-- supports two instant messaging “transports”
+    - with a different perimeter for every user (ie. all users will have access to a common set of functions, users who have supplied a "tool configuration" will have access to the functions associated to that "tool")
+- supports two instant messaging "transports"
     - whatsapp
     - signal
 - supports out-of-band messaging with the bot itself
     - to enable and disable the dictation/echo mode (for audio messages)
     - to change the current model
-    - to reset the current session (ie. wipe out the “context”)
+    - to reset the current session (ie. wipe out the "context")
     - to get more details about the model used and the usage statistics
-    - to provide configuration for the “tool calling”
+    - to provide configuration for the "tool calling"
 - supports invites
     - the owner of the bot can invite other users
     - users can invite other users
@@ -40,7 +44,7 @@ Today this bot
 What I would like to experiment next
 
 - add a Slack transport
-- add a “knowledge base driven RAG”
+- add a "knowledge base driven RAG"
 
 The main takeaways of this experience
 
