@@ -1,8 +1,12 @@
-# Clustering vectors in higher dimensions
+---
+tags:
+  - vectors
+  - word embeddings
+date: 2024-02-25
+published: true
+---
 
-Tags: vectors, word embeddings
-Publish Date: February 25, 2024
-Published: Yes
+# Clustering vectors in higher dimensions
 
 ## Objective
 

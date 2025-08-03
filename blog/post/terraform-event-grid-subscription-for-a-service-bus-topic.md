@@ -1,7 +1,12 @@
-# terraform: event grid subscription for a service bus topic
+---
+tags:
+  - terraform
+  - devops
+date: 2025-01-17
+published: true
+---
 
-Tags: terraform, devops
-Publish Date: January 17, 2025
+# terraform: event grid subscription for a service bus topic
 
 When terraforming an event grid subscription to a service bus topic, you might get an error like the following - not very clear.
 

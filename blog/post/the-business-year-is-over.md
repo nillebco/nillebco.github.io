@@ -1,8 +1,10 @@
+---
+tags:
+  - business
+published: "true"
+date: 2024-12-12
+---
 # The business year is over
-
-Tags: Business
-Publish Date: December 12, 2024
-Published: Yes
 
 Wow.
 

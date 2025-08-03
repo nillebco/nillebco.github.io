@@ -1,0 +1,32 @@
+{
+  "name": "nillebco.github.io",
+  "version": "1.0.0",
+  "description": "- [obsolete] synchronize notion posts (./cli sync)   - export the post (Markdown/CSV)   - generate a slug from the file name - write the blog post markdown in blog/post - add a record in the posts.json file - run generate_rss.py (./cli rss) - create a new BlueSky post, get the post ID (./cli tweet slug) - update posts.json with the bskyId",
+  "main": "behavior.js",
+  "scripts": {
+    "build": "npm run build:blog && npm run build:portfolio",
+    "build:blog": "esbuild src/blog-post-logic.js --bundle --format=iife --global-name=blogLogic --outfile=blog/post/logic.js --define:process.env.NODE_ENV=\\\"production\\\" --inject:./src/polyfills.js",
+    "build:portfolio": "esbuild src/portfolio-logic.js --bundle --format=iife --global-name=portfolioLogic --outfile=portfolio/portfolio.js --define:process.env.NODE_ENV=\\\"production\\\" --inject:./src/polyfills.js",
+    "dev": "npm run build && echo 'Build complete. Run again to rebuild.'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nillebco/nillebco.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/nillebco/nillebco.github.io/issues"
+  },
+  "homepage": "https://github.com/nillebco/nillebco.github.io#readme",
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.1"
+  }
+}

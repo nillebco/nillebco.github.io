@@ -1,8 +1,14 @@
-# Caddy as a reverse proxy in a podman rootless setup
+---
+tags:
+  - GDPR
+  - analytics
+  - reverse proxy
+  - terraform
+date: 2024-12-30
+published: true
+---
 
-Tags: GDPR, analytics, reverse proxy, terraform
-Publish Date: December 30, 2024
-Published: Yes
+# Caddy as a reverse proxy in a podman rootless setup
 
 I host my own server on a cloud. I pay attention to the softwares I run and to their security.
 
@@ -14,9 +20,9 @@ So I wrote a GDPR compliant, open source, lightweight, web analytics software.
 
 The EU says you need consent to collect your users data. This is a privacy directive, and several others exist across the globe. My bet is that they will become ubiquitous over time, so better be prepared.
 
-My website does not want to collect an individual data. I just want to know ho wmuch it is popular and who's browsing it. I’m not interested in IP addresses neither, or knowing which other sites you are visiting before mine. No fingerprinting, no advertising.
+My website does not want to collect an individual data. I just want to know ho wmuch it is popular and who's browsing it. I'm not interested in IP addresses neither, or knowing which other sites you are visiting before mine. No fingerprinting, no advertising.
 
-In this scenario, I could have chosen plausible analytics. But it's expensive and it has quite heavy requirements in terms of infrastructure (the UI, and all those dashboards require a fair amount of resources). Let’s be honest: given my habits, I don't need a UI.
+In this scenario, I could have chosen plausible analytics. But it's expensive and it has quite heavy requirements in terms of infrastructure (the UI, and all those dashboards require a fair amount of resources). Let's be honest: given my habits, I don't need a UI.
 
 ## Infrastructure
 
@@ -26,7 +32,7 @@ In this scenario, I could have chosen plausible analytics. But it's expensive an
 
 So, in the days of ChatGPT and Copilot, an MVP was ready in the matter of hours. But not everything was working as expected, since the proxy was replacing the client IP address with the podman daemon IP address (10.89.x.y). Also, I was computing the wrong schema for the realtive URIs: http instead of https.
 
-In my intended infrastructure, a single reverse proxy serves multiple services (say CDN, analytics, other). The reverse proxy choice was made several months in the past, and I was satisfied with it. Long story short, after having tried traefik and discarded the option to move to a rootful podman, I went the "caddy beta”route.
+In my intended infrastructure, a single reverse proxy serves multiple services (say CDN, analytics, other). The reverse proxy choice was made several months in the past, and I was satisfied with it. Long story short, after having tried traefik and discarded the option to move to a rootful podman, I went the "caddy beta"route.
 
 Caddy supports these features in rootless podman thanks to socket activation (a systemd feature) but version 2.9.0 is required (still a beta at the time of writing).
 
@@ -38,4 +44,4 @@ The trial and error took a couple of days, but at last I had a working configura
 
 # GitHub repository - hands on
 
-The [nillebco/analytics](https://github.com/nillebco/analytics) service provides a sample configuration. This is not perfect, in the sense that you still have some manual operation beyond the `./cli deploy`, but I’ll be polishing this.
+The [nillebco/analytics](https://github.com/nillebco/analytics) service provides a sample configuration. This is not perfect, in the sense that you still have some manual operation beyond the `./cli deploy`, but I'll be polishing this.

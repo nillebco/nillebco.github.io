@@ -1,8 +1,11 @@
-# Terraform Cloud sensitive variables? forget about that
+---
+tags:
+  - terraform
+date: 2024-12-16
+published: true
+---
 
-Tags: terraform
-Publish Date: December 16, 2024
-Published: Yes
+# Terraform Cloud sensitive variables? forget about that
 
 In Terraform Cloud you have the possibility to mark variables as **sensitive**. This is supposed to hide them from outputs and only allow you to set a new value.
 

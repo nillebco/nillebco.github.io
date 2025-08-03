@@ -1,14 +1,18 @@
-# Use podman as if it was docker (docker alias for podman)
+---
+tags:
+  - bash
+  - script
+date: 2024-09-15
+published: true
+---
 
-Tags: bash, script
-Publish Date: September 15, 2024
-Published: Yes
+# Use podman as if it was docker (docker alias for podman)
 
 I am a big fan of podman, since it supports rootless containers.
 
-But yet, it’s not 100% compatible with docker. It’s a pain to set up devcontainers, for example.
+But yet, it's not 100% compatible with docker. It's a pain to set up devcontainers, for example.
 
-So you could be interested in a little “wrapper”, that you should place in your PATH env variable.
+So you could be interested in a little "wrapper", that you should place in your PATH env variable.
 
 ```bash
 #!/bin/bash
