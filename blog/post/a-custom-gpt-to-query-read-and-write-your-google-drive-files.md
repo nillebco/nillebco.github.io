@@ -1,8 +1,13 @@
-# A Custom GPT to query, read and write your Google drive files
+---
+tags:
+  - ChatGPT-Plus
+  - GoogleDrive
+  - OpenAI
+published: 
+date: 2024-11-11
+---
 
-Tags: ChatGPT Plus, Google Drive, OpenAI
-Publish Date: November 11, 2024
-Published: Yes
+# A Custom GPT to query, read and write your Google drive files
 
 I have started playing with ChatGPT Plus last week, after having written an Assistant that enables chatting with the OpenAI (and others) API from Signal and WhatsApp (and others). So I was missing a couple of features I had implemented there. At the same time, I wanted to experiment how simple is it to create a new “Action” in ChatGPT plus.
 

@@ -17,6 +17,64 @@ function slugify(text) {
 }
 
 function parseMarkdown(markdown) {
+  // Check if the markdown has frontmatter (starts with ---)
+  if (markdown.startsWith('---')) {
+    // Find the end of frontmatter (second ---)
+    const frontmatterEnd = markdown.indexOf('---', 3);
+    if (frontmatterEnd !== -1) {
+      // Extract frontmatter content
+      const frontmatter = markdown.substring(3, frontmatterEnd).trim();
+      // Extract content (everything after the second ---)
+      const content = markdown.substring(frontmatterEnd + 3).trim();
+      
+      // Parse frontmatter (simple YAML parsing)
+      const metadata = {};
+      const frontmatterLines = frontmatter.split('\n');
+      
+      for (const line of frontmatterLines) {
+        const colonIndex = line.indexOf(':');
+        if (colonIndex !== -1) {
+          const key = line.substring(0, colonIndex).trim();
+          let value = line.substring(colonIndex + 1).trim();
+          
+          // Remove quotes if present
+          if ((value.startsWith('"') && value.endsWith('"')) || 
+              (value.startsWith("'") && value.endsWith("'"))) {
+            value = value.slice(1, -1);
+          }
+          
+          metadata[key] = value;
+        }
+      }
+      
+      // Extract title from content (first line starting with #)
+      const contentLines = content.split('\n');
+      const titleLine = contentLines.find(line => line.startsWith('# '));
+      const title = titleLine ? titleLine.replace('# ', '') : '';
+      
+      // Process the content, converting tag lines into HTML and adding anchors to headings
+      const processedContentLines = contentLines.map(line => {
+        if (line.startsWith('Tags: ')) {
+          const tags = line.replace('Tags: ', '')
+            .split('#')
+            .filter(Boolean)
+            .map(tag => {
+              const tagText = '#' + tag.trim();
+              if (!tagColors[tagText]) tagColors[tagText] = getRandomColor();
+              return `<span class="tag" style="background-color: ${tagColors[tagText]};">${tagText}</span>`;
+            })
+            .join(' ');
+          return `<div class="tags">${tags}</div>`;
+        }
+        return line;
+      });
+
+      const processedContent = processedContentLines.join('\n');
+      return { title, content: processedContent };
+    }
+  }
+  
+  // Fallback to original parsing for backward compatibility
   const lines = markdown.split('\n');
   const titleLine = lines.shift();
   const title = titleLine?.startsWith('#') ? titleLine.replace('# ', '') : '';
