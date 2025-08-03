@@ -1,7 +1,11 @@
-# knack: generate a mapping from the UI
+---
+tags:
+  - knack
+  - api
+date: 2025-01-23
+---
 
-Tags: knack, api
-Publish Date: January 23, 2025
+# knack: generate a mapping from the UI
 
 my opinion: knack is not playing faily with third-party developers who would like to obtain their Relations schema.
 
