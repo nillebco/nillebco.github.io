@@ -20,11 +20,6 @@ serve() {
     python -m http.server 8082
 }
 
-sync() {
-    . .venv/bin/activate
-    python sync_notion_posts.py ${@}
-}
-
 push() {
     git fetch origin
     git fetch web
@@ -41,14 +36,12 @@ push() {
 }
 
 setup() {
-    uv venv
-    source .venv/bin/activate
-    uv pip install feedgen pytz
+    uv sync
 }
 
 tweet() {
     . .venv/bin/activate
-    python create_bsky_post.py ${@}
+    uv run python create_bsky_post.py ${@}
 }
 
 case "$1" in
@@ -63,9 +56,6 @@ case "$1" in
         ;;
     devsync)
         devsync
-        ;;
-    sync)
-        sync ${@:2}
         ;;
     push)
         push
