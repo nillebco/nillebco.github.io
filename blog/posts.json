@@ -1,5 +1,17 @@
 [
     {
+        "title": "Create your own transcription software on MacOS",
+        "slug": "create-your-own-transcription-software-on-macos",
+        "tags": [
+            "stt",
+            "whisper",
+            "virtual-audio-devices"
+        ],
+        "date": "September 24, 2025",
+        "emoji": "🎙️",
+        "notion_id": "none"
+    },
+    {
         "title": "Do you use AI to evaluate CVs?",
         "slug": "do-you-use-ai-to-evaluate-cvs",
         "tags": [
