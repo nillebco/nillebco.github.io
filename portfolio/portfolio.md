@@ -26,7 +26,7 @@ For a long while I have been hosting a proxy to OpenAI via Signal, WhatsApp and 
 
 ### more about this
 
-[An AI-based Instant Messaging Assistant](https://nilleb.com/blog/#an-ai-based-instant-messaging-assistant)
+[An AI-based Instant Messaging Assistant](https://nilleb.co/blog/#an-ai-based-instant-messaging-assistant)
 
 ## Azure, GCP, Hetzner resources management with terraform
 

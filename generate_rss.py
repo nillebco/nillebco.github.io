@@ -6,7 +6,7 @@ import pytz
 def generate_rss():
     # Create feed generator
     fg = FeedGenerator()
-    link = 'https://nilleb.com'
+    link = 'https://nilleb.co'
     fg.title('Ivo Bellin Salarin Blog')
     fg.author({'name': 'Ivo Bellin Salarin'})
     fg.link(href=link, rel='alternate')
@@ -22,7 +22,7 @@ def generate_rss():
     for post in posts:
         fe = fg.add_entry()
         fe.title(post['title'])
-        fe.link(href=f'https://nilleb.com/blog/post/#{post["slug"]}')
+        fe.link(href=f'https://nilleb.co/blog/post/#{post["slug"]}')
         
         # Convert date string to proper datetime
         try:

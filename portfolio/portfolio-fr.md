@@ -26,7 +26,7 @@ Pendant longtemps, j'ai hébergé un proxy vers OpenAI via Signal, WhatsApp et T
 
 ### En savoir plus
 
-[Un Assistant de Messagerie Instantanée basé sur l'IA](https://nilleb.com/blog/#un-assistant-de-messagerie-instantanée-basé-sur-lia)
+[Un Assistant de Messagerie Instantanée basé sur l'IA](https://nilleb.co/blog/#un-assistant-de-messagerie-instantanée-basé-sur-lia)
 
 ## Gestion des ressources Azure, GCP, Hetzner avec terraform
 

@@ -26,7 +26,7 @@ Easy to integrate (kind of static):
 <div
   id="bluesky-comments"
   data-bsky-uri="at://FIXME_BLUESKY_DID/app.bsky.feed.post/FIXME_BLUESKY_POSTID"
-  hx-get="https://nilleb.com/components/bluesky-comments.html"
+  hx-get="https://nilleb.co/components/bluesky-comments.html"
   hx-trigger="load"
 ></div>
 ```
@@ -68,6 +68,6 @@ For convenience, all the sources I used to implement the component and my blog
 - [HTMX](https://htmx.org/)
 - [Emily Liu Blog Post](https://emilyliu.me/blog/comments)
 - [Emily Liu's gist](https://gist.github.com/emilyliu7321/19ac4e111588bdc0cb4e411c88d9c79a)
-- [The component](https://nilleb.com/components/bluesky-comments.html) source code
+- [The component](https://nilleb.co/components/bluesky-comments.html) source code
 
 ##
