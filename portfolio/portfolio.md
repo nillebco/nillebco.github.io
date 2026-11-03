@@ -40,19 +40,13 @@ Keywords: private endpoints, private dns zones, network security groups, load ba
 
 In today’s web, we have several identities. Almost one for every site.
 
-Our Token Exchange Services allow a seamless integration between different web applications (typically, a Digital Workplace integration).
-
-- LumApps
-  - Bunchball (gamification)
-  - Coveo (Search & Semantic Search)
-  - Looker
-  - Achievers
+Token exchange services allow a seamless integration between different web applications — typically a digital workplace talking to gamification, search, analytics and employee-recognition platforms, without asking users to sign in twice.
 
 ## A chatbot answering any LumApps related question
 
 Tags: #LLM #Q&A #RAG #retrieval-augmented-generation #formats-conversion
 
-[LumApps](https://www.lumapps.com/) (a Digital Workplace) offers a public [documentation web site](https://docs.lumapps.com/docs/). It’s a gold mine, and we use it a lot, at [Ariella Digital Consulting](https://www.arielladigitalconsulting.com/?utm_source=nilleb.com).
+[LumApps](https://www.lumapps.com/) (a Digital Workplace) offers a public [documentation web site](https://docs.lumapps.com/docs/). It’s a gold mine, and a perfect playground for retrieval-augmented generation.
 
 So we have
 
@@ -95,27 +89,3 @@ This is a sample of what we get, when querying our little LumDocsBot:
 > **Q: Which are the custom dimensions in Google Analytics 4?**
 >
 > Customer ID, Customer Name, Site ID, Site Name, Site Slug, Content Internal Type, Content Type ID, Content Type Name, Content Is Homepage, Content ID, Content Title, Content Slug, C> ontent Tag IDs, Content Tags, Content Metadata IDs, Content Metadata, Search Terms, User Is Admin, User Primary Language, and User Secondary Language. Source: https://docs.lumapps.com/docs/knowledge-l24187961517950485
-
-## The Expertise Locator
-
-Tags: #semantic-search #people-search #LLM #word-embeddings #postgres #pgvector #fts
-
-This company wishes to improve the collaboration across their departments and reduce the onboarding attrition.
-
-This organization is distributed across an entire continent - with eventually poor connectivity.
-
-The organization’s public web sites store thousands of PDFs (projects TARs & RRPs, briefs and papers, …) , blog posts, author biographies, … and more.
-
-We have converted non-structured  and semi-structured data into structured data. We have extracted publication dates, author names, countries, and texts. We have then mapped the recognized author names to a primary source of truth.
-
-Challenges:
-
-- map the orthographic variants of a name to the content of a normalized database
-- determine the best size of a paragraph, before converting it to an embedding
-- keep a good quality across a corpus of thousands of documents, distributed over the last 30 years
-- keep the performances of the vector database high enough to satisfy the queries of thousands of users
-- keep the bundle as small as possible in order to guarantee a good network connectivity from all around the globe
-
-### more about this
-
-- [Searching for people is not the same as searching for articles and concepts](https://nilleb.com/blog/#searching-for-people-is-not-the-same-as-searching-for-articles-and-concepts)

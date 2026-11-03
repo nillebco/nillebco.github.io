@@ -5,12 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description"
+    content="Ivo Bellin Salarin — freelance software engineer in Lyon. Cloud platforms and integrations on Azure with Terraform, and safe AI assistant connectors.">
   <link rel="canonical" href="https://nilleb.com/" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="nilleb.com blog" href="/feed.xml">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css"
     integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css?v=20250505" />
-  <link rel="stylesheet" href="two-columns.css?v=20250505" />
+  <link rel="stylesheet" href="style.css?v=20261103" />
+  <link rel="stylesheet" href="home.css?v=20261103" />
   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
   <script src="js/i18n.js"></script>
   <script src="js/theme.js"></script>
@@ -24,52 +27,120 @@
   <div hx-get="/components/theme-toggle.html" hx-trigger="load"></div>
   <div hx-get="/components/toast-menu.html" hx-trigger="load"></div>
 
-  <div class="grid-2">
-    <div class="section-2">
-      <h3 data-i18n="title">Consulting in Artificial Intelligence, Search Engines, Integrations</h3>
-      <p data-i18n="intro">I can help when you feel that you have a lot of information, but you struggle to get
-        knowledge out of it.
-      </p>
-      <p data-i18n="data_quote">Somebody wrote once that Data is 21st Century Oil.</p>
-      <p data-i18n="customer_pain">My customers feel like they have a huge amount of data - based on tens of years of
-        experience. But they
-        struggle to find relevant knowledge out of it. They complain about time consuming processes and about
-        the difficulty to onboard new employees.</p>
-      <p data-i18n="work_description">My work is to find ways to refine this corporate data into knowledge, so to bring
-        insights to all the
-        employees.</p>
-      <p data-i18n="tech_philosophy">I am generally allergic to the improper usage of the word AI. On the opposite, I
-        love statistics, natural
-        language processing (NLP), large language models (LLMs), vector databases, search engines.</p>
-      <p data-i18n="skills">I create Web applications with Python and React. I use Terraform to spin off the required
-        resources on
-        GCP, Azure or AWS. I can help when defining the architecture and infrastructure of a Web Application. I
-        leverage AI models capabilities to provide semantic search and retrieval-augmented-generation services.
-      </p>
-      <p><a href="mailto:hello@nilleb.com?subject=Public%20website%20inquiry"><span data-i18n="contact">Contact
-            me.</span></a></p>
-      <div class="logo-container">
-        <a href="http://www.april.org/adherer"><img class="partner-logo"
-            src="http://www.april.org/files/membre-de-april-125x125.png"
-            alt="Membre de April.org - Promouvoir et soutenir le logiciel libre" /></a>
-        <a href="https://www.ploss-ra.fr/"><img class="partner-logo"
-            src="https://www.ploss-ra.fr/wp-content/uploads/2024/02/cropped-LOGO-BLEU-1.png"
-            alt="Membre des entreprises du Numérique Libre en Auvergne Rhône-Alpes" /></a>
+  <main class="home">
+    <header class="hero">
+      <p class="eyebrow" data-i18n="location">Freelance software engineer · Lyon, France</p>
+      <h1 data-i18n="headline">I design and deliver cloud platforms and integrations — on Azure, with Terraform — and connect AI assistants to them, safely.</h1>
+      <p class="lede" data-i18n="lede">Organisations hire me when a platform has to be designed, wired to the systems around it, and actually run in production: infrastructure as code, APIs and message flows, and the connectors that let AI assistants use all of it — within your security rules.</p>
+      <p class="byline">Ivo Bellin Salarin</p>
+      <div class="actions">
+        <a class="cta" href="https://calendar.app.google/odchfE8LYb9w18aS8" target="_blank" rel="noopener" data-i18n="contact">Contact me</a>
+        <a class="mail" href="mailto:hello@nilleb.com?subject=Public%20website%20inquiry" data-i18n="email">or send an email</a>
+        <div class="socials">
+          <a href="https://github.com/nilleb" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://bsky.app/profile/nilleb.io" target="_blank" aria-label="Bluesky"><i class="fab fa-bluesky"></i></a>
+          <a href="https://h4.io/@nilleb" target="_blank" aria-label="Mastodon"><i class="fab fa-mastodon"></i></a>
+          <a href="https://pypi.org/user/nilleb/" target="_blank" aria-label="PyPI"><i class="fab fa-python"></i></a>
+          <a href="https://www.npmjs.com/~nilleb" target="_blank" aria-label="npm"><i class="fab fa-npm"></i></a>
+        </div>
       </div>
-    </div>
-    <div class="section-1">
-      <i class="fas fa-code fa-5x white"></i>
-      <h2>Ivo Bellin Salarin</h2>
-      <p data-i18n="location">Freelance Software Engineer in Lyon, France.</p>
-        <a href="https://bsky.app/profile/nilleb.io" class="social-icons" target="_blank"><i class="fab fa-bluesky"></i></a>
-        <a href="https://h4.io/@nilleb" class="social-icons" target="_blank"><i class="fab fa-mastodon"></i></a>
-        <a href="https://github.com/nilleb" class="social-icons" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://pypi.org/user/nilleb/" class="social-icons" target="_blank"><i class="fab fa-python"></i></a>
-        <a href="https://www.npmjs.com/~nilleb" class="social-icons" target="_blank"><i class="fab fa-npm"></i></a>
-    </div>
-  </div>
+    </header>
+
+    <section>
+      <h2 data-i18n="examples_title">What it looks like in practice</h2>
+      <ul class="list">
+        <li><strong data-i18n="ex1_title">Microservice platforms for finance</strong> — <span data-i18n="ex1_body">transaction orchestration, business-rule checks, SWIFT messaging, data models and migrations — from design to user acceptance testing.</span></li>
+        <li><strong data-i18n="ex2_title">Platform engineering</strong> — <span data-i18n="ex2_body">Terraform-managed Azure environments: Front Door and WAF, private networking, virtual desktops, reproducible dev, test and production.</span></li>
+        <li><strong data-i18n="ex3_title">Plugging the intranet into Claude and ChatGPT</strong> — <span data-i18n="ex3_body">MCP connectors that let employees search, read and publish intranet content from their AI assistant, within their own permissions.</span></li>
+        <li><strong data-i18n="ex4_title">Coding agents with guardrails</strong> — <span data-i18n="ex4_body">AI coding agents running in sandboxes (containers, microVMs, egress allowlists), so teams can use them without handing over their credentials.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-i18n="services_title">What I bring</h2>
+      <div class="cards">
+        <div class="card">
+          <i class="fas fa-cloud"></i>
+          <h3 data-i18n="s1_title">Cloud &amp; infrastructure as code</h3>
+          <p data-i18n="s1_body">Azure first, also GCP, AWS and Hetzner. Terraform, private networking, Front Door and WAF, API Management, hosting reviews and cost estimates.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-plug"></i>
+          <h3 data-i18n="s2_title">Integrations &amp; APIs</h3>
+          <p data-i18n="s2_body">Microservices, message flows (SWIFT, service bus, events), identity and token exchange, data models and migrations. Python, Rust, TypeScript.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-robot"></i>
+          <h3 data-i18n="s3_title">AI where it helps</h3>
+          <p data-i18n="s3_body">MCP servers, agent tooling and sandboxes — and search or RAG when the problem really is finding information.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="engage_title">How an engagement usually goes</h2>
+      <div class="cards">
+        <div class="card">
+          <h3 data-i18n="e1_title">1 · Understand the landscape</h3>
+          <p data-i18n="e1_body">Existing systems, constraints, security and compliance rules, the people who will run it.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="e2_title">2 · Build in increments</h3>
+          <p data-i18n="e2_body">Working software on a real environment early, reviewed with you every sprint.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="e3_title">3 · Hand over</h3>
+          <p data-i18n="e3_body">Documented, automated, and maintainable by your team after I leave.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach">
+      <h2 data-i18n="approach_title">How I work</h2>
+      <p data-i18n="approach_1">I like boring, reproducible infrastructure, clear interfaces and code that stays maintainable. I am allergic to the improper use of the word AI, and use language models where they solve a measurable problem.</p>
+      <p data-i18n="approach_2">I work alongside your teams, in your tools and processes, and prefer open source wherever it fits.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="oss_title">Open source &amp; talks</h2>
+      <ul class="list">
+        <li><a href="https://github.com/nillebco/varda">varda</a> — <span data-i18n="oss_varda">Rust CLI that routes markdown tasks to AI agents and runs them in sandboxed containers or microVMs.</span></li>
+        <li><a href="https://github.com/nillebco/switchboard">switchboard</a> — <span data-i18n="oss_switchboard">one API for Signal, WhatsApp and Telegram messaging.</span></li>
+        <li><a href="https://github.com/nillebco/gdrive">gdrive</a> — <span data-i18n="oss_gdrive">upload and export Google Drive files using Drive's own converters.</span></li>
+        <li><a href="https://github.com/nillebco/tessera">tessera</a> — <span data-i18n="oss_tessera">a macOS window manager in Rust, built around real Mission Control Spaces.</span></li>
+        <li><a href="https://github.com/nillebco/rt-voice-assistant">PyConFR 2025</a> — <span data-i18n="talk_voice">building a real-time voice assistant.</span></li>
+        <li><a href="https://github.com/nillebco/virtualenvs-and-lockfiles">PyCon 2025</a> — <span data-i18n="talk_lockfiles">a history of virtualenvs and lockfiles.</span></li>
+      </ul>
+      <p><a href="/portfolio" data-i18n="portfolio_link">More in the portfolio →</a></p>
+    </section>
+
+    <section>
+      <h2 data-i18n="writing_title">Recent writing</h2>
+      <ul class="list" id="latest-posts"></ul>
+      <p><a href="/blog" data-i18n="blog_link">All posts →</a> · <a href="/feed.xml">RSS</a></p>
+    </section>
+  </main>
 
   <div hx-get="/components/copyright-notice.html" hx-trigger="load"></div>
+  <script>
+    fetch('/blog/posts.json')
+      .then(r => r.json())
+      .then(posts => {
+        const list = document.getElementById('latest-posts');
+        posts.slice(0, 3).forEach(post => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = `/blog/post/#${post.slug}`;
+          a.textContent = `${post.emoji || ''} ${post.title}`.trim();
+          const meta = document.createElement('div');
+          meta.className = 'meta';
+          meta.textContent = post.date;
+          li.append(a, meta);
+          list.append(li);
+        });
+      })
+      .catch(() => { });
+  </script>
   <script src="https://analytics.nilleb.com/simple.js?pid=43c65438-0a04-e5ae-c360-de67f02f62a1"></script>
 </body>
 

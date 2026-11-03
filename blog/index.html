@@ -9,42 +9,35 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css"
     integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous">
-  <link rel="stylesheet" href="../style.css?v=20240318" />
-  <link rel="stylesheet" href="./layout.css?v=20250214-2" />
-  <link rel="stylesheet" href="./blog.css?v=20240318" />
+  <link rel="stylesheet" href="../style.css?v=20261103" />
+  <link rel="stylesheet" href="../pages.css?v=20261103" />
   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
   <script src="../js/i18n.js"></script>
   <script src="../js/theme.js"></script>
-  <title>nilleb's blog</title>
+  <title>Blog · Ivo Bellin Salarin</title>
 </head>
 
 <body>
-  <nav style="padding: 10px; display: flex; align-items: center;">
+  <nav class="crumbs">
     <div hx-get="/components/logo.html" hx-trigger="load"></div>
-    <a href="/" style="text-decoration: underline; color: inherit;" data-i18n="main_site">nillebco</a> &nbsp; &gt; &nbsp;
+    <a href="/" data-i18n="main_site">nillebco</a><span class="sep">/</span>
     <span data-i18n="blog">blog</span>
-    <a href="/feed.xml" style="margin-left: 10px;" title="RSS Feed"><i class="fas fa-rss"></i></a>
+    <a href="/feed.xml" title="RSS Feed" aria-label="RSS"><i class="fas fa-rss"></i></a>
   </nav>
 
   <div hx-get="/components/language-toggle.html" hx-trigger="load"></div>
   <div hx-get="/components/theme-toggle.html" hx-trigger="load"></div>
   <div hx-get="/components/toast-menu.html" hx-trigger="load"></div>
 
-  <div class="grid-2">
-    <div class="section-2">
-      <div class="page-icon"><span role="img" aria-label="🔬" class="page-icon">🔬</span>
-      </div>
-      <h2 data-i18n="blog">blog</h2>
-      <ul id="blog-list" class="blog-list"></ul>
-    </div>
-  </div>
+  <main class="page">
+    <header class="page-header">
+      <p class="eyebrow">Ivo Bellin Salarin</p>
+      <h1 data-i18n="blog_title">Notes from the field</h1>
+      <p data-i18n="blog_intro">Cloud, integrations, AI tooling and the occasional detour — written down so the next person (often me) doesn't have to rediscover it.</p>
+    </header>
+    <ul id="blog-list" class="blog-list"></ul>
+  </main>
   <div hx-get="/components/blog-list.html?v=1" hx-trigger="load"></div>
-  <div id="overlay" class="overlay">
-    <div class="overlay-content">
-      <span class="overlay-close">&times;</span>
-      <div id="overlay-post-content"></div>
-    </div>
-  </div>
   <div hx-get="/components/copyright-notice.html" hx-trigger="load"></div>
   <script src="https://analytics.nilleb.com/simple.js?pid=43c65438-0a04-e5ae-c360-de67f02f62a1"></script>
 </body>

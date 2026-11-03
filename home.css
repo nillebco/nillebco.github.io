@@ -1,0 +1,153 @@
+/* home page */
+.home {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5rem 1rem 4rem;
+    line-height: 1.6;
+}
+
+.home a {
+    color: var(--highlight-color);
+}
+
+.home a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    padding: 2rem 0 3rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.hero .eyebrow {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.5rem;
+}
+
+.hero h1 {
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0 0 1rem;
+    color: var(--accent-color);
+}
+
+.hero .lede {
+    font-size: 1.15rem;
+    max-width: 40em;
+    margin: 0 0 1.5rem;
+}
+
+.hero .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.home a.cta {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    background: var(--highlight-color);
+    color: #fff;
+    font-weight: bold;
+}
+
+.home a.cta:hover {
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.socials {
+    display: flex;
+    gap: 0.9rem;
+    font-size: 1.3rem;
+}
+
+.home section {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.home section:last-of-type {
+    border-bottom: none;
+}
+
+.home h2 {
+    font-size: 1.4rem;
+    margin: 0 0 1.25rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.05rem;
+}
+
+.card p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.card i {
+    color: var(--highlight-color);
+    font-size: 1.4rem;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list li {
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--line);
+}
+
+.list li:first-child {
+    border-top: none;
+}
+
+.list .meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.approach p {
+    max-width: 44em;
+}
+
+footer#copyright-notice {
+    background: var(--bg-color);
+    padding: 4px 0;
+}
+
+.hero .byline {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 0 0 1.5rem;
+}
+
+.list strong {
+    color: var(--accent-color);
+}
+
+.home a.mail {
+    color: var(--muted);
+    font-size: 0.95rem;
+}

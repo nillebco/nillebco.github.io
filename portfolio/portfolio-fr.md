@@ -40,18 +40,13 @@ Mots-clés : points de terminaison privés, zones DNS privées, groupes de sécu
 
 Dans le web d'aujourd'hui, nous avons plusieurs identités. Presque une pour chaque site.
 
-Nos Services d'échange de jetons permettent une intégration transparente entre différentes applications web (typiquement, une intégration de Digital Workplace).
-
-- LumApps
-  - Bunchball (gamification)
-  - Coveo (Recherche & Recherche sémantique)
-  - Looker
+Les services d'échange de jetons permettent une intégration transparente entre différentes applications web — typiquement une digital workplace qui dialogue avec des plateformes de gamification, de recherche, d'analytics et de reconnaissance des collaborateurs, sans que l'utilisateur ait à se reconnecter.
 
 ## Un chatbot répondant à toute question liée à LumApps
 
 Tags: #LLM #Q&A #RAG #retrieval-augmented-generation #formats-conversion
 
-[LumApps](https://www.lumapps.com/) (un Digital Workplace) propose un [site web de documentation public](https://docs.lumapps.com/docs/). C'est une mine d'or, et nous l'utilisons beaucoup, chez [Ariella Digital Consulting](https://www.arielladigitalconsulting.com/).
+[LumApps](https://www.lumapps.com/) (un Digital Workplace) propose un [site web de documentation public](https://docs.lumapps.com/docs/). C'est une mine d'or, et un terrain de jeu idéal pour la génération augmentée par la récupération.
 
 Nous avons donc :
 
@@ -94,27 +89,3 @@ Voici un échantillon de ce que nous obtenons, en interrogeant notre petit LumDo
 > **Quelles sont les dimensions personnalisées dans Google Analytics 4** ?
 >
 > ID Client, Nom du Client, ID du Site, Nom du Site, Slug du Site, Type Interne du Contenu, ID du Type de Contenu, Nom du Type de Contenu, Le Contenu est-il une Page d'accueil, ID du Contenu, Titre du Contenu, Slug du Contenu, IDs des Tags du Contenu, Tags du Contenu, IDs des Métadonnées du Contenu, Métadonnées du Contenu, Termes de Recherche, L'Utilisateur est-il Admin, Langue Principale de l'Utilisateur, et Langue Secondaire de l'Utilisateur. Source : https://docs.lumapps.com/docs/knowledge-l24187961517950485
-
-## Le Localisateur d'Expertise
-
-Tags: #semantic-search #people-search #LLM #word-embeddings #postgres #pgvector #fts
-
-Cette entreprise souhaite améliorer la collaboration entre ses départements et réduire l'attrition à l'onboarding.
-
-Cette organisation est répartie sur tout un continent - avec potentiellement une mauvaise connectivité.
-
-Les sites web publics de l'organisation stockent des milliers de PDFs (TARs & RRPs des projets, briefs et articles, ...), articles de blog, biographies d'auteurs, ... et plus encore.
-
-Nous avons converti des données non structurées et semi-structurées en données structurées. Nous avons extrait les dates de publication, les noms d'auteurs, les pays et les textes. Nous avons ensuite mappé les noms d'auteurs reconnus à une source primaire de vérité.
-
-Défis :
-
-- mapper les variantes orthographiques d'un nom au contenu d'une base de données normalisée
-- déterminer la meilleure taille d'un paragraphe, avant de le convertir en embedding
-- maintenir une bonne qualité à travers un corpus de milliers de documents, répartis sur les 30 dernières années
-- maintenir les performances de la base de données vectorielle suffisamment élevées pour satisfaire les requêtes de milliers d'utilisateurs
-- garder le bundle aussi petit que possible pour garantir une bonne connectivité réseau depuis le monde entier
-
-### En savoir plus
-
-- [Rechercher des personnes n'est pas la même chose que rechercher des articles et des concepts](https://nilleb.com/blog/#rechercher-des-personnes-nest-pas-la-même-chose-que-rechercher-des-articles-et-des-concepts) 

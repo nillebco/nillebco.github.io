@@ -1,10 +1,14 @@
-<script src="https://unpkg.com/htmx.org@1.9.10?v=1"></script>
 <script>
+  // Old shared links looked like /blog/#slug: forward them to the post page.
+  if (window.location.hash.length > 1) {
+    window.location.replace(`post/${window.location.hash}`);
+  }
+
   document.addEventListener('htmx:afterSettle', async function(evt) {
     const blogList = document.getElementById('blog-list');
     if (blogList && !blogList.hasContent) {
       blogList.hasContent = true;
-      
+
       const response = await fetch('posts.json', {
         headers: {
           'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -14,67 +18,38 @@
       });
       const posts = await response.json();
 
-      blogList.innerHTML = posts.map(post => `
-        <li class="blog-item">
-          <span>${post.emoji}</span><strong><a href="#${post.slug}" class="post-link" data-slug="${post.slug}">${post.title}</a></strong>
-          <div>${post.date}</div>
-          <div class="tags">
-            ${post.tags.map(tag => {
-              if (!tagColors[tag]) tagColors[tag] = getRandomColor();
-              return `<span class="tag" style="background-color: ${tagColors[tag]};">${tag}</span>`;
-            }).join(' ')}
-          </div>
-        </li>
-      `).join('');
+      blogList.replaceChildren(...posts.map(post => {
+        const li = document.createElement('li');
+        li.className = 'blog-item';
 
-      document.querySelectorAll('.post-link').forEach(link => {
-        link.addEventListener('click', (event) => {
-          event.preventDefault();
-          const slug = event.target.getAttribute('data-slug');
-          openPost(slug);
-          window.nillebAnalytics.trackEvent(`blog-post-${slug}`, { slug });
-          window.location.hash = slug;
+        const emoji = document.createElement('span');
+        emoji.className = 'emoji';
+        emoji.textContent = post.emoji || '';
+
+        const link = document.createElement('a');
+        link.className = 'post-link';
+        link.href = `post/#${post.slug}`;
+        link.textContent = post.title;
+        link.addEventListener('click', () => {
+          window.nillebAnalytics?.trackEvent(`blog-post-${post.slug}`, { slug: post.slug });
         });
-      });
 
-      if (window.location.hash) {
-        const slug = window.location.hash.substring(1);
-        openPost(slug);
-      }
+        const date = document.createElement('div');
+        date.className = 'date';
+        date.textContent = post.date;
 
-      const overlay = document.getElementById('overlay');
-      const overlayClose = document.querySelector('.overlay-close');
-      
-      overlayClose.addEventListener('click', () => {
-        overlay.style.display = 'none';
-        window.location.hash = '';
-      });
+        const tags = document.createElement('div');
+        tags.className = 'tags';
+        (post.tags || []).forEach(tag => {
+          const span = document.createElement('span');
+          span.className = 'tag';
+          span.textContent = tag;
+          tags.append(span);
+        });
 
-      overlay.addEventListener('click', (event) => {
-        if (event.target.id === 'overlay') {
-          overlay.style.display = 'none';
-          window.location.hash = '';
-        }
-      });
+        li.append(emoji, link, date, tags);
+        return li;
+      }));
     }
   });
-
-  const tagColors = {};
-
-  function getRandomColor() {
-    const hue = Math.floor(Math.random() * 360);
-    return `hsl(${hue}, 70%, 80%)`;
-  }
-
-  async function fetchPostContent(slug) {
-    const response = await fetch(`post/#${slug}`);
-    return await response.text();
-  }
-
-  function openPost(slug) {
-    const postUrl = `post/#${slug}`;
-    document.getElementById('overlay-post-content').innerHTML = 
-      `<iframe src="${postUrl}" style="width: 100%; height: 100%; border: none;"></iframe>`;
-    document.getElementById('overlay').style.display = 'flex';
-  }
-</script> 
+</script>

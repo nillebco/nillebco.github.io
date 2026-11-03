@@ -14,7 +14,7 @@ Determine whether we can understand which are the concepts in a delimited portio
 
 ## Context
 
-We are analyzing a corpus of 600k sentences from the Asian Development Bank public documents.
+We are analyzing a corpus of 600k sentences from publicly available institutional reports.
 These documents have been split into sentences and vectorized using the OpenAI word embeddings API.
 The resulting vectors, along with the sentence text and the paper uid, have been stored in a table called sentencev.
 
