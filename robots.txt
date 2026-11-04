@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /business-card/
+
+Sitemap: https://nilleb.co/sitemap.xml
