@@ -22,7 +22,7 @@ def generate_rss():
     for post in posts:
         fe = fg.add_entry()
         fe.title(post['title'])
-        fe.link(href=f'https://nilleb.co/blog/post/#{post["slug"]}')
+        fe.link(href=f'https://nilleb.co/blog/post/{post["slug"]}/')
         
         # Convert date string to proper datetime
         try:
@@ -35,7 +35,7 @@ def generate_rss():
             fe.published(datetime.now(pytz.timezone('Europe/Paris')))
 
         fe.description(f"{post['emoji']} {', '.join(post['tags'])}")
-        fe.guid(f"{link}/blog/post/#{post['slug']}", permalink=True)
+        fe.guid(f"{link}/blog/post/{post['slug']}/", permalink=True)
 
     # Generate RSS feed
     fg.rss_file('feed.xml')

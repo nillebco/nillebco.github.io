@@ -1,8 +1,3 @@
-import { Buffer } from 'buffer';
-import matter from 'gray-matter';
-
-// Make Buffer available globally for gray-matter
-window.Buffer = Buffer;
 
 const tagColors = {};
 
@@ -23,8 +18,8 @@ function slugify(text) {
 }
 
 function parseMarkdown(markdown) {
-  // Use gray-matter to parse frontmatter
-  const { data: frontmatter, content } = matter(markdown);
+  // drop an optional front matter block
+  const content = markdown.replace(/^---\n[\s\S]*?\n---\n/, '');
   
   // Extract title from content (first line starting with #)
   const contentLines = content.split('\n');

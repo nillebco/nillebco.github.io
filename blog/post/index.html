@@ -1,66 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="canonical" href="https://nilleb.co/blog/post/" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css"
-    integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/shell.min.js"></script>
-  <link rel="stylesheet" href="../../style.css?v=20261103" />
-  <link rel="stylesheet" href="../../pages.css?v=20261103" />
-  <script src="../../behavior.js"></script>
-  <script src="logic.js"></script>
-  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="../../js/theme.js"></script>
+  <meta name="robots" content="noindex, follow">
+  <title>Blog · Ivo Bellin Salarin</title>
+  <link rel="canonical" href="https://nilleb.co/blog/">
   <script>
-    window.BLUESKY_DID = 'did:plc:kflooyw5fbmv6siiqwvnwqut';
+    // old links looked like /blog/post/#slug: each post now has its own page
+    const slug = location.hash.substring(1);
+    location.replace(slug ? `/blog/post/${encodeURIComponent(slug)}/` : '/blog/');
   </script>
-  <title>Blog Post</title>
 </head>
-
 <body>
-  <nav class="crumbs">
-    <div hx-get="/components/logo.html" hx-trigger="load"></div>
-    <a href="/">nillebco</a><span class="sep">/</span>
-    <a href="/blog">blog</a><span class="sep">/</span>
-    <span id="breadcrumb-title"></span>
-  </nav>
-
-  <div hx-get="/components/theme-toggle.html" hx-trigger="load"></div>
-  <div hx-get="/components/toast-menu.html" hx-trigger="load"></div>
-
-  <main class="page">
-    <header class="page-header">
-      <div class="post-emoji"><span role="img" aria-label="🔬" id="page-icon">🔬</span></div>
-      <h1 id="post-title"></h1>
-      <p class="post-meta" id="post-date"></p>
-      <div id="post-tags" class="tags"></div>
-    </header>
-    <article id="post-content" class="prose"></article>
-    <div id="bluesky-comments"></div>
-  </main>
-
-  <div hx-get="/components/copyright-notice.html" hx-trigger="load"></div>
-  <script src="https://analytics.nilleb.com/simple.js?pid=43c65438-0a04-e5ae-c360-de67f02f62a1"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      loadPost();
-      fetch('../posts.json')
-        .then(r => r.json())
-        .then(posts => {
-          const post = posts.find(x => x.slug === window.location.hash.substring(1));
-          if (post) document.getElementById('post-date').textContent = post.date;
-        })
-        .catch(() => { });
-    });
-  </script>
+  <p><a href="/blog/">All posts</a></p>
 </body>
 </html>

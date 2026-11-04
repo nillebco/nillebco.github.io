@@ -28,7 +28,7 @@ if post_data["bskyId"]:
     print(f"Post already exists with bskyId: {post_data['bskyId']}")
     sys.exit(1)
 
-link = f"https://nilleb.co/blog/post/#{slug}"
+link = f"https://nilleb.co/blog/post/{slug}/"
 
 text_builder = client_utils.TextBuilder()
 post_text = f"{post_data['emoji']} {post_data['title']}\n\n"

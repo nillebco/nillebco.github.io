@@ -20,19 +20,23 @@ serve() {
     python -m http.server 8083
 }
 
+build() {
+    uv run python build_blog.py
+    uv run python generate_rss.py
+    npm run -s build
+}
+
+# publish = push main, then merge main into the www.nilleb.co Pages branch of nillebco.github.io.
+# (www.nilleb.com only redirects to nilleb.co: never merge main into it.)
 push() {
-    git fetch origin
-    git fetch web
+    set -e
     git push origin main
-    git checkout www.nilleb.co
-    git pull origin www.nilleb.co
-    git merge main
-    git push origin www.nilleb.co
-    git checkout www.nilleb.com
-    git pull web www.nilleb.com
-    git merge main
-    git push web www.nilleb.com
-    git checkout main
+    git fetch web-co
+    WORKTREE=$(mktemp -d)/www-co
+    git worktree add --detach "$WORKTREE" web-co/www.nilleb.co
+    git -C "$WORKTREE" merge --no-edit -m "Merge branch 'main' into www.nilleb.co" main
+    git -C "$WORKTREE" push web-co HEAD:www.nilleb.co
+    git worktree remove "$WORKTREE"
 }
 
 setup() {
@@ -57,6 +61,9 @@ case "$1" in
     devsync)
         devsync
         ;;
+    build)
+        build
+        ;;
     push)
         push
         ;;
@@ -71,6 +78,6 @@ case "$1" in
         setup
         ;;
     *)
-        echo "Error: Invalid command. Available commands: serve, push, rss, setup"
+        echo "Error: Invalid command. Available commands: serve, build, push, rss, tweet, setup"
         ;;
 esac

@@ -1,4 +1,5 @@
 ---
+lang: fr
 tags:
   - Business
   - Legal

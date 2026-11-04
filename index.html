@@ -205,7 +205,7 @@
         posts.slice(0, 3).forEach(post => {
           const li = document.createElement('li');
           const a = document.createElement('a');
-          a.href = `/blog/post/#${post.slug}`;
+          a.href = `/blog/post/${post.slug}/`;
           a.textContent = `${post.emoji || ''} ${post.title}`.trim();
           const meta = document.createElement('div');
           meta.className = 'meta';

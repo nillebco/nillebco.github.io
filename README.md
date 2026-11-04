@@ -7,9 +7,9 @@
   - generate a slug from the file name
 - write the blog post markdown in blog/post
 - add a record in the posts.json file
-- run generate_rss.py (./cli rss)
+- render the post pages, sitemap and RSS (./cli build)
 - create a new BlueSky post, get the post ID (./cli tweet slug)
-- update posts.json with the bskyId
+- update posts.json with the bskyId, then ./cli build again (the comments block is rendered into the page)
 
 ## publish the site
 

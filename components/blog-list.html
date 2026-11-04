@@ -1,7 +1,7 @@
 <script>
   // Old shared links looked like /blog/#slug: forward them to the post page.
   if (window.location.hash.length > 1) {
-    window.location.replace(`post/${window.location.hash}`);
+    window.location.replace(`post/${window.location.hash.substring(1)}/`);
   }
 
   document.addEventListener('htmx:afterSettle', async function(evt) {
@@ -28,7 +28,7 @@
 
         const link = document.createElement('a');
         link.className = 'post-link';
-        link.href = `post/#${post.slug}`;
+        link.href = `post/${post.slug}/`;
         link.textContent = post.title;
         link.addEventListener('click', () => {
           window.nillebAnalytics?.trackEvent(`blog-post-${post.slug}`, { slug: post.slug });

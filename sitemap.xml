@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://nilleb.co/</loc><lastmod>2026-11-04</lastmod></url>
-  <url><loc>https://nilleb.co/portfolio/</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://nilleb.co/blog/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://nilleb.co/portfolio/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://nilleb.co/blog/</loc><lastmod>2025-09-24</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/create-your-own-transcription-software-on-macos/</loc><lastmod>2025-09-24</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/do-you-use-ai-to-evaluate-cvs/</loc><lastmod>2025-07-07</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/drive-cursor-with-your-voice-local-setup/</loc><lastmod>2025-03-29</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/giving-webpages-a-voice-a-chrome-extension-for-conversational-browsing/</loc><lastmod>2025-03-27</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/projects-i-finished-thanks-to-the-ai-this-month/</loc><lastmod>2025-01-31</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/knack-generate-a-mapping-from-the-ui/</loc><lastmod>2025-01-23</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/terraform-event-grid-subscription-for-a-service-bus-topic/</loc><lastmod>2025-01-17</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/ai-mirror-on-the-wall/</loc><lastmod>2025-01-12</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/add-comments-to-your-blog-with-bsky-and-atproto/</loc><lastmod>2025-01-02</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/colima-a-lightweight-docker-replacement/</loc><lastmod>2025-01-02</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/caddy-as-a-reverse-proxy-in-a-podman-rootless-setup/</loc><lastmod>2024-12-20</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/terraform-cloud-sensitive-variables-forget-about-that/</loc><lastmod>2024-12-16</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/trying-the-apple-vision-pro/</loc><lastmod>2024-12-13</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/the-business-year-is-over/</loc><lastmod>2024-12-12</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/creation-de-eurl-en-france/</loc><lastmod>2024-12-09</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/a-custom-gpt-to-query-read-and-write-your-google-drive-files/</loc><lastmod>2024-11-11</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/get-all-the-openai-models-deployments-hosted-on-your-azure-subscriptions/</loc><lastmod>2024-09-23</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/generate-a-json-schema-for-openai-structured-outputs/</loc><lastmod>2024-09-19</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/use-podman-as-if-it-was-docker-docker-alias-for-podman/</loc><lastmod>2024-09-15</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/an-ai-based-instant-messaging-assistant/</loc><lastmod>2024-05-07</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/clustering-vectors-in-higher-dimensions/</loc><lastmod>2024-02-25</lastmod></url>
+  <url><loc>https://nilleb.co/blog/post/searching-for-people-is-not-the-same-as-searching-for-articles-and-concepts/</loc><lastmod>2024-02-23</lastmod></url>
 </urlset>
